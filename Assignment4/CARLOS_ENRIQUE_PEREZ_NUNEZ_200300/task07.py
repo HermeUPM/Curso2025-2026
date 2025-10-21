@@ -165,29 +165,19 @@ report.validate_07_02b(g, query)
 #
 
 # ===== TASK 7.3 =====
-query = """PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
-PREFIX person:   <http://oeg.fi.upm.es/resource/person/>
-
-SELECT DISTINCT ?name ?type WHERE {
-  ?x ontology:knows person:Rocky .
-  ?x ontology:hasName ?name .
-  ?x rdf:type ?type .
+query = """SELECT DISTINCT ?name ?type WHERE {
+  ?x <http://oeg.fi.upm.es/def/people#knows>
+     <http://oeg.fi.upm.es/resource/person/Rocky> .
+  ?x <http://oeg.fi.upm.es/def/people#hasName> ?name .
+  ?x a ?type .
+  ?type <http://www.w3.org/2000/01/rdf-schema#subClassOf>* 
+        <http://oeg.fi.upm.es/def/people#Person> .
 }"""
 
 for r in g.query(query):
     print(r.name, r.type)
 
-
-for r in g.query(query):
-    print(r.name, r.type)
-
-# Validation. Do not remove
-report.validate_07_03(g, query)
-
-
-
-## Validation: Do not remove
+# Validación
 report.validate_07_03(g, query)
 
 
