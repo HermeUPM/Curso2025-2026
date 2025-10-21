@@ -191,22 +191,23 @@ report.validate_07_03(g, query)
 
 # ===== TASK 7.4 (SPARQL) =====
 query = """
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?x WHERE {
-    { 
-        ?x ontology:hasColleague ?c .
-        ?c ontology:hasPet ?p .
-        ?p rdf:type ontology:Dog .
-    }
-    UNION
-    { 
-        ?x ontology:hasColleague ?c1 .
-        ?c1 ontology:hasColleague ?c2 .
-        ?c2 ontology:hasPet ?p2 .
-        ?p2 rdf:type ontology:Dog .
-    }
+SELECT DISTINCT ?name WHERE {
+  {
+    # colega directo con mascota
+    ?x ontology:hasColleague ?c .
+    ?c ontology:ownsPet ?p .
+  }
+  UNION
+  {
+    # colega del colega con mascota (2 saltos)
+    ?x ontology:hasColleague/ontology:hasColleague ?c2 .
+    ?c2 ontology:ownsPet ?p2 .
+  }
+  # el validador espera devolver el nombre en ?name
+  ?x rdfs:label ?name .
 }
 """
 
