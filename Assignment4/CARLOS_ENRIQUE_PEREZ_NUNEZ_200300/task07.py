@@ -165,20 +165,23 @@ report.validate_07_02b(g, query)
 #
 
 # ===== TASK 7.3 =====
-query = """SELECT DISTINCT ?name ?type WHERE {
-  ?x <http://oeg.fi.upm.es/def/people#knows>
-     <http://oeg.fi.upm.es/resource/person/Rocky> .
-  ?x <http://oeg.fi.upm.es/def/people#hasName> ?name .
-  ?x a ?type .
-  ?type <http://www.w3.org/2000/01/rdf-schema#subClassOf>* 
-        <http://oeg.fi.upm.es/def/people#Person> .
-}"""
+# Nombres de los individuos que conocen a Rocky (exactamente 3: Asun, Raul, Fantasma)
+query = """
+PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?name WHERE {
+  ?x ontology:knows ontology:Rocky .
+  ?x rdfs:label ?name .
+}
+"""
 
 for r in g.query(query):
-    print(r.name, r.type)
+    print(r.name)
 
 # Validación
 report.validate_07_03(g, query)
+
 
 
 
