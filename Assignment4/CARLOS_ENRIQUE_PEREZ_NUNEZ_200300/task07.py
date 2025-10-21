@@ -187,28 +187,26 @@ report.validate_07_03(g, query)
 #
 
 # ===== TASK 7.4 (SPARQL) =====
-query =  """SELECT DISTINCT ?name WHERE {
-  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
+qquery = """
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
 
+SELECT DISTINCT ?name WHERE {
   {
-    
     ?x ontology:hasColleague ?c .
     ?c ontology:hasPet ?d .
     ?d rdf:type ontology:Dog .
   }
   UNION
   {
-    
     ?x ontology:hasColleague ?c1 .
     ?c1 ontology:hasColleague ?c2 .
     ?c2 ontology:hasPet ?d2 .
     ?d2 rdf:type ontology:Dog .
   }
-
-  
   ?x ontology:hasName ?name .
-}"""
+}
+"""
 
 for r in g.query(query):
   print(r.name)
