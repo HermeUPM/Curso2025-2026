@@ -164,26 +164,20 @@ report.validate_07_02b(g, query)
 
 #
 
-# **TASK 7.3:  List the name and type of those who know Rocky (in SPARQL only). Use name and type as variables in the query**
-
-#
-
-# **TASK 7.3:  List the name and type of those who know Rocky (in SPARQL only). Use name and type as variables in the query**
-
-# ===== TASK 7.3 (SPARQL) =====
-query = """
-PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# ===== TASK 7.3 =====
+query = """PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
 PREFIX person:   <http://oeg.fi.upm.es/resource/person/>
 
-SELECT ?name ?type WHERE {
+SELECT DISTINCT ?name ?type WHERE {
   ?x ontology:knows person:Rocky .
+  ?x ontology:hasName ?name .
   ?x rdf:type ?type .
-  OPTIONAL { ?x ontology:hasName ?n . }
-  OPTIONAL { ?x rdfs:label ?l . }
-  BIND (COALESCE(?n, ?l) AS ?name)
-}
-"""
+}"""
+
+for r in g.query(query):
+    print(r.name, r.type)
+
 
 for r in g.query(query):
     print(r.name, r.type)
