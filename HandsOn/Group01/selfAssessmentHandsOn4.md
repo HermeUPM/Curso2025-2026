@@ -1,78 +1,31 @@
-# Self-Assessment — Hands-on 4 (GroupXX)
+# Hands-on assignment 4 – Self assessment
 
-## 1. Overview
-This submission transforms two TMB CSV datasets (metro **lines** and **stations per line**) into RDF using **RML/YARRRML mappings**, generating a Turtle file with the transformed data.
+## Checklist
 
-## 2. Files delivered
-```
-HandsOn/GroupXX/
-├── mappings/
-│   ├── metro_mapping.rml
-│   └── metro_mapping.yml        # optional (YARRRML equivalent)
-├── rdf/
-│   ├── metro_data.ttl           # REQUIRED (RDF data in Turtle)
-│   └── queries.sparql           # REQUIRED (verification queries)
-└── selfAssessmentHandsOn4.md    # this document
-```
+**Every RDF file:**
 
-## 3. Datasets
-- `linies_metro.csv` — Metro lines metadata (id, code, name, colors, geometry).
-- `estacions_linia.csv` — Stations per line (station id/name, line id, order, geometry).
+- [X] Uses the .nt extension
+- [X] Is serialized in the NTriples format
+- [X] Follows the resource naming strategy
+- [X] Uses class and property URIs that are the same as those used in the ontology
 
-## 4. Ontology
-We rely on `ontology.ttl` which defines:
-- Classes: `metro:MetroLine`, `metro:Station`, `metro:StationLine`
-- Properties: `metro:hasStation`, `metro:hasLine`, `metro:stationOrder`, `metro:lineName`, `metro:lineColor`, etc.
-Namespace used across mappings: `https://data.example.org/transport/bcn/metro/ontology#`.
+**Every URI in the RDF files:**
 
-## 5. Mapping summary
-- **RML** (`mappings/metro_mapping.rml`) and **YARRRML** (`mappings/metro_mapping.yml`) map:
-  - Lines → resources `ex:line/{ID_LINIA}` with labels, colors, (optional) description and geometry.
-  - Stations → resources `ex:station/{ID_ESTACIO}` with names and geometry.
-  - Relationship:
-    - `metro:hasStation` (Line → Station)
-    - `metro:hasLine` (Station → Line) (reverse link)
-    - `metro:StationLine` resource to preserve `metro:stationOrder` along each line.
+- [X] Is "readable" and has some meaning (e.g., it is not an auto-increased integer) 
+- [X] Is not encoded as a string
+- [X] Does not contain a double slash (i.e., "//")
 
-## 6. How requirements are met (FR1–FR6)
-- **FR1** — Lines on map: `metro:MetroLine` + `metro:hasGeometry`.
-- **FR2** — Stations on map: `metro:Station` + `metro:hasGeometry`.
-- **FR3** — Lines per station: `metro:hasLine` (from Station) and `metro:hasStation` (from Line).
-- **FR4** — Station details: `metro:stationId`, `metro:stationName`, `metro:hasGeometry`.
-- **FR5** — Number of stops in a line: `metro:hasStation` with query `Q1` (COUNT).
-- **FR6** — Line details: name/code/colors/origin/dest + station count with `Q5`.
+**Every individual in the RDF files:**
 
-## 7. Execution notes
-- **Option A – Morph-KGC** (Python):
-  1. Install: `pip install morph-kgc`
-  2. Run with RML:
-     ```bash
-     morph-kgc -m mappings/metro_mapping.rml -o rdf/metro_data.ttl
-     ```
-  3. Or from YARRRML (if preferred):
-     - Convert YARRRML → RML (e.g., using `yarrrml-parser`) or run through a compatible tool.
-- **Option B – RMLMapper** (Java):
-  ```bash
-  java -jar rmlmapper.jar -m mappings/metro_mapping.rml -o rdf/metro_data.ttl
-  ```
+- [X] Has a label with the name of the individual
+- [X] Has a type
 
-## 8. Queries
-Provided in `rdf/queries.sparql`. Cover FR1–FR6:
-- Q0: Lines (id, code, name, color)
-- Q1: Station count per line
-- Q2: Stations of a line ordered
-- Q3: Lines serving a station
-- Q4: Station details
-- Q5: Line details + station count
-- Q6: Station → Lines (compact list)
+**Every value in the RDF files:**
 
-## 9. Assumptions and limitations
-- Geometry is stored as a text literal via `metro:hasGeometry` (no GeoSPARQL reasoning assumed).
-- Only columns required for FR1–FR6 were mapped. Extra attributes (operator, accessibility, etc.) can be added later without breaking the model.
-- The namespace `https://data.example.org/transport/bcn/metro/` is a placeholder and can be replaced by the course repository domain if provided.
+- [X] Is trimmed
+- [X] Is properly encoded (e.g., dates, booleans)
+- [X] Includes its datatype
+- [X] Uses the correct datatype (e.g., values of 0-1 may be booleans and not integers, not every string made of numbers is a number)
 
-## 10. Future work (optional)
-- Add GeoSPARQL compliance (`geo:asWKT`) and CRS definition.
-- Extend mappings for operator/family/accessibility metadata.
-- Publish dereferenceable IRIs and VoID/DCAT metadata.
-- Provide SHACL shapes for data validation.
+## Comments on the self-assessment
+_(If required)_
