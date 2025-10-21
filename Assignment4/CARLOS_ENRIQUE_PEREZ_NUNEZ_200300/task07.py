@@ -79,16 +79,17 @@ query =  """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?c ?sc WHERE {
+SELECT DISTINCT ?c ?sc WHERE {
   {
     ?c rdf:type rdfs:Class .
-    OPTIONAL { ?c rdfs:subClassOf ?sc }
+    OPTIONAL { ?c rdfs:subClassOf ?sc . }
   }
   UNION
   {
     ?c rdfs:subClassOf ?sc .
   }
 }
+
 """
 
 for r in g.query(query):
@@ -168,15 +169,17 @@ report.validate_07_02b(g, query)
 #
 
 # ===== TASK 7.3 (SPARQL) =====
-query =  """SELECT ?name ?type WHERE {
-  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
-  PREFIX person:   <http://oeg.fi.upm.es/resource/person/>
+query = """
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
+PREFIX person:   <http://oeg.fi.upm.es/resource/person/>
 
+SELECT ?name ?type WHERE {
   ?x ontology:knows person:Rocky .
   ?x ontology:hasName ?name .
   ?x rdf:type ?type .
-}"""
+}
+"""
 
 # Visualizar resultados
 for r in g.query(query):
