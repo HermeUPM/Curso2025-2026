@@ -168,25 +168,33 @@ report.validate_07_02b(g, query)
 
 #
 
-# ===== TASK 7.3 (SPARQL) =====
-query = """
-PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ontology: <http://oeg.fi.upm.es/def/people#>
-PREFIX person:   <http://oeg.fi.upm.es/resource/person/>
+from rdflib.plugins.sparql import prepareQuery
+from rdflib import Namespace
 
-SELECT ?name ?type WHERE {
-  ?x ontology:knows person:Rocky .
-  ?x ontology:hasName ?name .
-  ?x rdf:type ?type .
+p   = Namespace("http://oeg.fi.upm.es/def/people#")          # clases/propiedades
+per = Namespace("http://oeg.fi.upm.es/resource/person/")     # individuos
+
+query = prepareQuery('''
+ SELECT DISTINCT ?name ?type WHERE {
+  
+  { ?ind (p:knows|^p:knows) per:Rocky . }
+
+  
+  ?ind rdf:type ?type .
+
+  
+  OPTIONAL { ?ind p:hasName ?n . }
+  OPTIONAL { ?ind rdfs:label ?l . }
+  BIND (COALESCE(?n, ?l) AS ?name)
 }
-"""
+''', initNs={"p": p, "per": per, "rdf": RDF, "rdfs": RDFS})
 
-# Visualizar resultados
+# Visualización
 for r in g.query(query):
-  print(r.name, r.type)
+    print(r.name, r.type)
 
-
-#
+# Validación
+report.validate_07_03(g, query)
 
 ## Validation: Do not remove
 report.validate_07_03(g, query)
