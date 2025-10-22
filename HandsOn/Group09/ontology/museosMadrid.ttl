@@ -1,0 +1,134 @@
+@prefix mod: <https://w3id.org/mod#> .
+@prefix ns: <http://data.example.org/madridMuseos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+ns:accessibility a owl:DatatypeProperty ;
+    rdfs:label "accessibility" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:address a owl:DatatypeProperty ;
+    rdfs:label "address" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:codeNeighbourhood a owl:DatatypeProperty ;
+    rdfs:label "code neighbourhood" ;
+    rdfs:domain ns:Neighbourhood ;
+    rdfs:range xsd:integer .
+
+ns:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:descriptionEntity a owl:DatatypeProperty ;
+    rdfs:label "description entity" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:districtCode a owl:DatatypeProperty ;
+    rdfs:label "district code" ;
+    rdfs:domain ns:District ;
+    rdfs:range xsd:integer .
+
+ns:email a owl:DatatypeProperty ;
+    rdfs:label "email" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:equipment a owl:DatatypeProperty ;
+    rdfs:label "equipment" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:fax a owl:DatatypeProperty ;
+    rdfs:label "fax" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:hasDistrict a owl:ObjectProperty ;
+    rdfs:label "has district" ;
+    rdfs:domain ns:Neighbourhood ;
+    rdfs:range ns:District .
+
+ns:hasLocation a owl:ObjectProperty ;
+    rdfs:label "has location" ;
+    rdfs:domain ns:District ;
+    rdfs:range ns:Location .
+
+ns:hasNeighbourhood a owl:ObjectProperty ;
+    rdfs:label "has neighbourhood" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range ns:Neighbourhood .
+
+ns:hasProvince a owl:ObjectProperty ;
+    rdfs:label "has province" ;
+    rdfs:domain ns:Location ;
+    rdfs:range ns:Province .
+
+ns:latitude a owl:DatatypeProperty ;
+    rdfs:label "latitude" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:double .
+
+ns:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:double .
+
+ns:phone a owl:DatatypeProperty ;
+    rdfs:label "phone" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:postalCode a owl:DatatypeProperty ;
+    rdfs:label "postal code" ;
+    rdfs:domain ns:District ;
+    rdfs:range xsd:integer .
+
+ns:schedule a owl:DatatypeProperty ;
+    rdfs:label "schedule" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:transport a owl:DatatypeProperty ;
+    rdfs:label "transport" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:string .
+
+ns:xCoordinate a owl:DatatypeProperty ;
+    rdfs:label "x coordinate" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:integer .
+
+ns:yCoordinate a owl:DatatypeProperty ;
+    rdfs:label "y coordinate" ;
+    rdfs:domain ns:Museum ;
+    rdfs:range xsd:integer .
+
+ns:Province a owl:Class ;
+    rdfs:label "Province" .
+
+ns:Location a owl:Class ;
+    rdfs:label "Location" .
+
+ns:Neighbourhood a owl:Class ;
+    rdfs:label "Neighbourhood" .
+
+ns:District a owl:Class ;
+    rdfs:label "District" .
+
+ns:Museum a owl:Class ;
+    rdfs:label "Museum" .
+

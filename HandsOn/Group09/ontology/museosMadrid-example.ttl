@@ -1,0 +1,34 @@
+@prefix ns: <http://data.example.org/madridMuseos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns:CasaMuseoFuenteDelRey a ns:Museum ;
+    ns:descriptionEntity """Fundación AMYC - Fran Daurel  Este museo,  situado en Aravaca y conocido también como Casa - Museo Fuente del Rey. Fundación AMYC, ofrece al visitante una colección de más de 250 obras entre pinturas, dibujos y esculturas (198 pinturas, 37 esculturas y 27 dibujos) realizadas desde mediados del siglo XIX hasta principios del XXI. Se exponen piezas de grandes artistas modernistas e impresionistas como Sorolla, Mariano Fortuny, Nonell, Rusiñol, Ramón Casas, Mir, Rendir, Gargallo, Joseph Llimona, Joan Miró, Salvador Dalí, Tapies, Anglada Camarasa o Torres García, entre otros. La colección está formada por los fondos privados del coleccionista y mecenas Francisco Daurella y se muestra en lo que fue su casa. Los más de 3000 metros cuadrados del edificio así como su jardín, han sido rehabilitados para poder acoger las obras en el que es el primer museo de la capital dedicado en exclusiva al arte catalán.""" ;
+    ns:schedule "De lunes a viernes de 10:00 a 19:00 horas. Visitas guiadas concertadas Agosto cerrado" ;
+    ns:equipment "" ;
+    ns:transport "Consulta los siguientes enlaces:" ;
+    ns:description "" ;
+    ns:accessibility "" ;
+    ns:address "Calle Fuente del Rey 11, 28023 Madrid" ;
+    ns:latitude 40.45546866305681^^xsd:double ;
+    ns:longitude -3.7705716814130965^^xsd:double ;
+    ns:phone "913 579 116" ;
+    ns:fax "" ;
+    ns:email "info@fundaciofrandaurel.com" ;
+    ns:type "/contenido/entidadesYorganismos/FundacionesCulturales" ;
+    ns:xCoordinate 434663^^xsd:integer ;
+    ns:yCoordinate 4478596^^xsd:integer ;
+    ns:hasNeighbourhood ns:Aravaca .
+
+ns:Aravaca a ns:Neighbourhood ;
+    ns:codeNeighbourhood 7^^xsd:integer ;
+    ns:hasDistrict ns:MoncloaAravaca .
+
+ns:MoncloaAravaca a ns:District ;
+    ns:districtCode 9^^xsd:integer ;
+    ns:postalCode 28023^^xsd:integer ;
+    ns:hasLocation ns:MadridLocation .
+
+ns:MadridLocation a ns:Location ;
+    ns:hasProvince ns:MadridProvince .
+
+ns:MadridProvince a ns:Province .
