@@ -126,19 +126,19 @@ report.validate_07_02b(g, query)
 
 """**TASK 7.3:  List the name and type of those who know Rocky (in SPARQL only). Use name and type as variables in the query**"""
 
-query =  """
+query = """
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ppl:  <http://oeg.fi.upm.es/def/people#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?name ?type
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns:   <http://oeg.fi.upm.es/def/people#>
+
+SELECT DISTINCT ?name ?type
 WHERE {
-  VALUES (?name ?type) {
-    ("Asun"      <urn:dummy:Type>)
-    ("Raul"      <urn:dummy:Type>)
-    ("Fantasma"  <urn:dummy:Type>)
-  }
+  ?person ns:knows ns:Rocky ;
+          rdf:type ?type .
+  BIND(STR(?person) AS ?name)
 }
 """
+
 # TO DO
 # Visualize the results
 for r in g.query(query):
@@ -149,15 +149,17 @@ report.validate_07_03(g, query)
 
 """**Task 7.4: List the name of those entities who have a colleague with a dog, or that have a collegue who has a colleague who has a dog (in SPARQL). Return the results in a variable called name**"""
 
-query =  """
-PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ppl:  <http://oeg.fi.upm.es/def/people#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?name
+query = """
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ns:  <http://oeg.fi.upm.es/def/people#>
+
+SELECT DISTINCT ?name
 WHERE {
-  VALUES ?name { "Asun" "Raul" "Oscar" }
+  ?name (ns:hasColleague | ns:hasColleague/ns:hasColleague) ?p .
+  ?p ns:ownsPet ?dog .
 }
 """
+
 
 for r in g.query(query):
   print(r.name)
