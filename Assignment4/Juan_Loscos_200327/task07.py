@@ -52,7 +52,7 @@ for c in classes:
 
 #list of tuples
 for r in result:
-  print(r)
+    print(r)
 
 ## Validation: Do not remove
 report.validate_07_1a(result)
@@ -71,7 +71,7 @@ WHERE {
 """
 
 for r in g.query(query):
-  print(r.c, r.sc)
+    print(r.c, r.sc)
 
 ## Validation: Do not remove
 report.validate_07_1b(query,g)
@@ -103,7 +103,7 @@ for clase in todas_las_clases:
 
 # visualize results
 for i in individuals:
-  print(i)
+    print(i)
 
 # validation. Do not remove
 report.validate_07_02a(individuals)
@@ -123,7 +123,7 @@ WHERE {
 """
 
 for r in g.query(query):
-  print(r.ind)
+    print(r.ind)
 # Visualize the results
 
 ## Validation: Do not remove
@@ -133,19 +133,20 @@ report.validate_07_02b(g, query)
 
 query =  """
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ppl:  <http://oeg.fi.upm.es/def/people#>
 
 SELECT DISTINCT ?name ?type
 WHERE {
-  ?x ppl:knows ppl:Rocky ;
-     rdf:type ?type .
-  BIND(STR(?x) AS ?name)
+  ?person ppl:knows ppl:Rocky ;
+          rdf:type ?type ;
+          rdfs:label ?name .
 }
 """
 # TO DO
 # Visualize the results
 for r in g.query(query):
-  print(r.name, r.type)
+    print(r.name, r.type)
 
 ## Validation: Do not remove
 report.validate_07_03(g, query)
@@ -164,7 +165,7 @@ WHERE {
 """
 
 for r in g.query(query):
-  print(r.name)
+    print(r.name)
 
 # TO DO
 # Visualize the results
