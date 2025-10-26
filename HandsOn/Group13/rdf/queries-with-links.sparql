@@ -1,0 +1,189 @@
+#######################################################
+# 0. Check for URIs with spaces (potentially malformed)
+#######################################################
+SELECT ?s ?p ?o
+WHERE {
+  ?s ?p ?o .
+  FILTER (isIRI(?s) && regex(str(?s), " "))
+}
+LIMIT 50
+
+#######################################################
+# 0.1 Ensure objects are valid IRIs
+#######################################################
+SELECT ?s ?p ?o
+WHERE {
+  ?s ?p ?o .
+  FILTER (isIRI(?o))
+}
+LIMIT 50
+
+#######################################################
+# 0.2 Extract all unique URIs for external validation
+#######################################################
+SELECT DISTINCT ?uri
+WHERE {
+  { ?s ?p ?uri . FILTER(isIRI(?uri)) }
+  UNION
+  { ?uri ?p ?o . FILTER(isIRI(?uri)) }
+}
+LIMIT 100
+
+#######################################################
+# 0.3 Check that URIs start with http or https
+#######################################################
+SELECT ?uri
+WHERE {
+  ?s ?p ?uri .
+  FILTER (regex(str(?uri), "^https?://"))
+}
+LIMIT 100
+
+#######################################################
+# 0.4 Detect local-style URIs (e.g., urn:, _: or #)
+#######################################################
+SELECT ?uri
+WHERE {
+  ?s ?p ?uri .
+  FILTER (regex(str(?uri), "^urn:|^_:|^#"))
+}
+LIMIT 100
+
+#######################################################
+# 1. Verify that accidents have been generated
+#######################################################
+SELECT ?accidente
+WHERE {
+  ?accidente a <http://example.org#Accidente> .
+}
+LIMIT 10
+
+#######################################################
+# 2. Verify that each accident has a date and time
+#######################################################
+SELECT ?accidente ?fecha ?hora
+WHERE {
+  ?accidente a <http://example.org#Accidente> ;
+             <http://example.org#fecha> ?fecha ;
+             <http://example.org#hora> ?hora .
+}
+LIMIT 10
+
+#######################################################
+# 3. Verify that accidents are linked to districts
+#######################################################
+SELECT ?accidente ?distrito
+WHERE {
+  ?accidente <http://example.org#enDistrito> ?distrito .
+}
+LIMIT 10
+
+#######################################################
+# 4. Verify that accidents are linked to at least one street
+#######################################################
+SELECT ?accidente ?calle
+WHERE {
+  ?accidente <http://example.org#enCalle> ?calle .
+}
+LIMIT 10
+
+#######################################################
+# 5. Verify that intersections (cruces) have been generated
+#######################################################
+SELECT ?cruce ?calle1 ?calle2
+WHERE {
+  ?cruce a <http://example.org#Cruce> ;
+         <http://example.org#tieneCalle> ?calle1, ?calle2 .
+}
+LIMIT 10
+
+#######################################################
+# 6. Verify that accidents are linked to intersections 
+#######################################################
+SELECT ?accidente ?cruce
+WHERE {
+  ?accidente <http://example.org#enCruce> ?cruce .
+}
+LIMIT 10
+
+#######################################################
+# 7. Verify that vehicles have been generated and linked to accidents
+#######################################################
+SELECT ?vehiculo ?accidente
+WHERE {
+  ?vehiculo a <http://example.org#Vehiculo> ;
+            <http://example.org#perteneceA> ?accidente .
+}
+LIMIT 10
+
+#######################################################
+# 8. Verify that persons have been generated and linked to accidents
+#######################################################
+SELECT ?persona ?accidente
+WHERE {
+  ?persona a <http://example.org#Persona> ;
+           <http://example.org#involucradoEn> ?accidente .
+}
+LIMIT 10
+
+#######################################################
+# 9. Verify weather conditions for accidents
+#######################################################
+SELECT ?accidente ?estado
+WHERE {
+  ?accidente <http://example.org#estadoMeteorologico> ?estado .
+}
+LIMIT 10
+
+#######################################################
+# 10. List all accidents (URIs of type ex:Accidente)
+#######################################################
+SELECT ?accidente
+WHERE {
+  ?accidente rdf:type <http://example.org#Accidente> .
+}
+LIMIT 20
+
+#######################################################
+# 11. Show each accident with its type, date, and district
+#######################################################
+SELECT ?accidente ?tipo ?fecha ?distrito
+WHERE {
+  ?accidente rdf:type <http://example.org#Accidente> ;
+             <http://example.org#tipoAccidente> ?tipo ;
+             <http://example.org#fecha> ?fecha ;
+             <http://example.org#enDistrito> ?distrito .
+}
+LIMIT 50
+
+#######################################################
+# 12. Count accidents by district
+#######################################################
+SELECT ?distrito (COUNT(?accidente) AS ?numAccidents)
+WHERE {
+  ?accidente rdf:type <http://example.org#Accidente> ;
+             <http://example.org#enDistrito> ?distrito .
+}
+GROUP BY ?distrito
+ORDER BY DESC(?numAccidents)
+
+#######################################################
+# 13. Count accidents by weather condition
+#######################################################
+SELECT ?estadoMeteorologico (COUNT(?accidente) AS ?numAccidents)
+WHERE {
+  ?accidente rdf:type <http://example.org#Accidente> ;
+             <http://example.org#estadoMeteorologico> ?estadoMeteorologico .
+}
+GROUP BY ?estadoMeteorologico
+
+#######################################################
+# 14. Find all accident coordinates (latitude, longitude)
+#######################################################
+SELECT ?accidente ?lat ?long
+WHERE {
+  ?accidente rdf:type <http://example.org#Accidente> ;
+             <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat ;
+             <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long .
+}
+LIMIT 50
