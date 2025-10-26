@@ -1,20 +1,19 @@
-PREFIX ns1: <http://data.barcelona.cat/att/>
-PREFIX ns2: <http://data.barcelona.cat/rel/>
+PREFIX att: <http://data.barcelona.cat/att/>
+PREFIX rel: <http://data.barcelona.cat/rel/>
+PREFIX base: <http://data.barcelona.cat/actividades/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 # Todas las actividades con su titulo, tipo, precio, fechaInicio y fechaFin con su respectivo organizador.
 SELECT ?actividad ?titulo ?tipo ?precio ?fechaInicio ?fechaFin ?organizador
 WHERE {
-  ?actividad a <http://data.barcelona.cat/actividades/Actividad> ;
-            ns1:titulo ?titulo ;
-            ns1:tipo ?tipo ;
-            ns1:Precio ?precio ;
-            ns1:fechaInicio ?fechaInicio ;
-            ns1:fechaFin ?fechaFin ;
-  			ns2:isHosted ?organizador .
+  ?actividad a base:Actividad ;
+            att:titulo ?titulo ;
+            att:precio ?precio ;
+            att:fechaInicio ?fechaInicio ;
+            att:fechaFin ?fechaFin ;
+  			rel:isHosted ?organizador .
 }
 ORDER BY ?fechaInicio
-
-
-
 
 
 
@@ -22,8 +21,8 @@ ORDER BY ?fechaInicio
 
 SELECT ?tipo (COUNT(*) as ?cantidad)
 WHERE {
-  ?actividad a <http://data.barcelona.cat/actividades/Actividad> ;
-            ns1:tipo ?tipo .
+  ?actividad a base:Actividad ;
+            att:tipo ?tipo .
 }
 GROUP BY ?tipo
 
@@ -40,26 +39,18 @@ GROUP BY ?predicado
 ORDER BY DESC(?uso)
 
 
-
-
-
-
 #"Mapa de calor" de la oferta de actividades segun localización (tendria que funcionar cuando la relacion ns2:isContained funcione)
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX ns1: <http://data.barcelona.cat/att/>
-PREFIX ns2: <http://data.barcelona.cat/rel/>
-
 SELECT ?municipio ?organizador ?categoria
        (COUNT(?actividad) as ?numActividades)
        (SUM(xsd:integer(?aforo)) as ?aforoAcumulado)
        (GROUP_CONCAT(DISTINCT ?titulo; SEPARATOR="; ") as ?ejemplosActividades)
 WHERE {
-  ?actividad a <http://data.barcelona.cat/actividades/Actividad> ;
-             ns1:titulo ?titulo ;
-             ns1:Aforo ?aforo ;
-             ns2:isHosted ?organizador ;
-             ns2:typeOf ?categoria ;
-             ns2:placed ?municipio .
+  ?actividad a base:Actividad ;
+             att:titulo ?titulo ;
+             att:aforo ?aforo ;
+             rel:isHosted ?organizador ;
+             rel:typeOf ?categoria ;
+             rel:placed ?municipio .
   
 }
 GROUP BY ?comarca ?municipio ?organizador ?categoria
@@ -67,28 +58,18 @@ HAVING (COUNT(?actividad) >= 1)
 ORDER BY ?comarca ?municipio ?organizador DESC(?numActividades)
 
 
-
-
-
 # Dada un conjunto de Actividades, encontrar sus correspondientes organizadores
-PREFIX ns1: <http://data.barcelona.cat/att/>
-PREFIX ns2: <http://data.barcelona.cat/rel/>
-
 SELECT ?actividad ?organizador
 WHERE {
-  ?actividad a <http://data.barcelona.cat/actividades/Actividad> ;
-             ns2:isHosted ?organizador .
+  ?actividad a base:Actividad ;
+             rel:isHosted ?organizador .
 }
 LIMIT 20
 
 
 
 
-
 # Dado un conjunto de Municipio, encontrar la Comarca en la que está contenida (isContained)
-
-PREFIX rel: <http://data.barcelona.cat/rel/>
-
 SELECT ?municipio ?comarca
 WHERE {
   ?municipio rel:isContained ?comarca .
@@ -100,14 +81,37 @@ LIMIT 20
 
 
 # Dado un conjunto de Municipio, encontrar las Actividad correspondientes (placed)
-
-PREFIX rel: <http://data.barcelona.cat/rel/>
-
 SELECT ?municipio ?actividad
 WHERE {
-  ?actividad a <http://data.barcelona.cat/actividades/Actividad> ;
+  ?actividad a base:Actividad ;
              rel:placed ?municipio ;
 }
 ORDER BY ?municipio
 LIMIT 20
 
+
+# Encuentra actividades y sus organizadores vinculados a Wikidata:Municipio
+SELECT ?actividad ?organizador ?wikidata
+WHERE {
+  ?actividad rel:isHosted ?organizador .
+  ?organizador owl:sameAs ?wikidata .
+}
+
+
+# Encuentra actividades y los municipios vinculados a Wikidata:Municipio
+SELECT ?actividad ?municipio ?wikidata
+WHERE {
+  ?actividad rel:placed ?municipio .
+  ?municipio owl:sameAs ?wikidata .
+}
+LIMIT 20
+
+
+
+# Relaciona municipios con comarcas y sus equivalentes en Wikidata
+SELECT ?municipio ?comarca ?wikidata
+WHERE {
+  ?municipio rel:isContained ?comarca .
+  ?comarca owl:sameAs ?wikidata .
+}
+LIMIT 20
