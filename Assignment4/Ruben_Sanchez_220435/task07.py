@@ -126,34 +126,17 @@ report.validate_07_03(g, query)
 
 """**Task 7.4: List the name of those entities who have a colleague with a dog, or that have a collegue who has a colleague who has a dog (in SPARQL). Return the results in a variable called name**"""
 
-query = """
+query =  """
 SELECT DISTINCT ?name WHERE {
-  {
-    ?persona <http://oeg.fi.upm.es/def/people#hasColleague> ?colega1 .
-    ?colega1 <http://oeg.fi.upm.es/def/people#ownsPet> ?mascota1 .
-    ?mascota1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://oeg.fi.upm.es/def/people#Animal> .
-  }
-  UNION
-  {
-    ?persona <http://oeg.fi.upm.es/def/people#hasColleague> ?colega2 .
-    ?colega2 <http://oeg.fi.upm.es/def/people#hasColleague> ?colega3 .
-    ?colega3 <http://oeg.fi.upm.es/def/people#ownsPet> ?mascota2 .
-    ?mascota2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://oeg.fi.upm.es/def/people#Animal> .
-  }
-
-  {
-    ?persona <http://oeg.fi.upm.es/def/people#hasName> ?name .
-  }
-  UNION
-  {
-    ?persona <http://www.w3.org/2000/01/rdf-schema#label> ?name .
-    FILTER NOT EXISTS { ?persona <http://oeg.fi.upm.es/def/people#hasName> ?anyName }
-  }
+  ?persona <http://oeg.fi.upm.es/def/people#hasColleague>+ ?colega .
+  ?colega <http://oeg.fi.upm.es/def/people#ownsPet> ?mascota .
+  ?persona <http://www.w3.org/2000/01/rdf-schema#label> ?name .
 }
+
 """
 
 for r in g.query(query):
-    print(r.name)
+  print(r.name)
 
 ## Validation: Do not remove
 report.validate_07_04(g,query)
