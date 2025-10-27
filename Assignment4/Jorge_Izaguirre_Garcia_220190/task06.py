@@ -47,7 +47,7 @@ g.add((ontology.Person, RDFS.label, Literal("Person", datatype=XSD.string)))
 
 g.add((ontology.Professor, RDF.type, RDFS.Class))
 g.add((ontology.Professor, RDFS.subClassOf, ontology.Person))
-g.add((ontology.Profesor, RDFS.label, Literal("Professor", datatype=XSD.string)))
+g.add((ontology.Professor, RDFS.label, Literal("Professor", datatype=XSD.string)))
 
 g.add((ontology.AssociateProfessor, RDF.type, RDFS.Class))
 g.add((ontology.AssociateProfessor, RDFS.subClassOf, ontology.Professor))
