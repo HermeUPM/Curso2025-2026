@@ -1,5 +1,6 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix ns1: <https://data.example.org/transport/bcn/metro/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -9,14 +10,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/111> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/112_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/112_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/112> ;
     ns1:stationOrder 2 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/1136_L11> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/1136_L11> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L11> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/1136> ;
     ns1:stationOrder 1 .
@@ -27,20 +26,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/1137> ;
     ns1:stationOrder 2 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/1138_L11> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/1138_L11> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L11> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/1138> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/1139_L11> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/1139_L11> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L11> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/1139> ;
     ns1:stationOrder 4 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/113_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/113_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/113> ;
     ns1:stationOrder 3 .
@@ -69,8 +65,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/116> ;
     ns1:stationOrder 6 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/117_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/117_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/117> ;
     ns1:stationOrder 7 .
@@ -87,8 +82,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/119> ;
     ns1:stationOrder 9 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/120_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/120_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/120> ;
     ns1:stationOrder 10 .
@@ -99,8 +93,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/121> ;
     ns1:stationOrder 11 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/122_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/122_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/122> ;
     ns1:stationOrder 12 .
@@ -111,8 +104,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/123> ;
     ns1:stationOrder 13 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/124_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/124_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/124> ;
     ns1:stationOrder 14 .
@@ -129,8 +121,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/126> ;
     ns1:stationOrder 16 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/127_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/127_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/127> ;
     ns1:stationOrder 17 .
@@ -141,32 +132,27 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/128> ;
     ns1:stationOrder 18 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/129_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/129_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/129> ;
     ns1:stationOrder 19 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/130_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/130_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/130> ;
     ns1:stationOrder 20 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/131_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/131_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/131> ;
     ns1:stationOrder 21 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/132_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/132_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/132> ;
     ns1:stationOrder 22 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/133_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/133_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/133> ;
     ns1:stationOrder 23 .
@@ -177,8 +163,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/134> ;
     ns1:stationOrder 24 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/135_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/135_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/135> ;
     ns1:stationOrder 25 .
@@ -189,8 +174,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/136> ;
     ns1:stationOrder 26 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/137_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/137_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/137> ;
     ns1:stationOrder 27 .
@@ -201,8 +185,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/138> ;
     ns1:stationOrder 28 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/139_L1> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/139_L1> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/139> ;
     ns1:stationOrder 29 .
@@ -213,8 +196,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/140> ;
     ns1:stationOrder 30 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/210_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/210_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/210> ;
     ns1:stationOrder 1 .
@@ -231,38 +213,32 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/212> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/213_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/213_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/213> ;
     ns1:stationOrder 4 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/214_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/214_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/214> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/215_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/215_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/215> ;
     ns1:stationOrder 6 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/216_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/216_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/216> ;
     ns1:stationOrder 7 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/217_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/217_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/217> ;
     ns1:stationOrder 8 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/218_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/218_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/218> ;
     ns1:stationOrder 9 .
@@ -279,8 +255,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/220> ;
     ns1:stationOrder 11 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/221_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/221_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/221> ;
     ns1:stationOrder 12 .
@@ -291,8 +266,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/222> ;
     ns1:stationOrder 13 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/223_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/223_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/223> ;
     ns1:stationOrder 14 .
@@ -309,8 +283,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/225> ;
     ns1:stationOrder 16 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/226_L2> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/226_L2> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/226> ;
     ns1:stationOrder 17 .
@@ -327,14 +300,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/314> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/315_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/315_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/315> ;
     ns1:stationOrder 2 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/316_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/316_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/316> ;
     ns1:stationOrder 3 .
@@ -351,8 +322,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/318> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/319_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/319_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/319> ;
     ns1:stationOrder 6 .
@@ -363,20 +333,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/320> ;
     ns1:stationOrder 7 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/321_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/321_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/321> ;
     ns1:stationOrder 8 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/322_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/322_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/322> ;
     ns1:stationOrder 9 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/323_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/323_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/323> ;
     ns1:stationOrder 10 .
@@ -417,20 +384,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/329> ;
     ns1:stationOrder 16 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/330_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/330_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/330> ;
     ns1:stationOrder 17 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/331_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/331_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/331> ;
     ns1:stationOrder 18 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/332_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/332_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/332> ;
     ns1:stationOrder 19 .
@@ -441,20 +405,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/333> ;
     ns1:stationOrder 20 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/334_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/334_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/334> ;
     ns1:stationOrder 21 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/335_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/335_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/335> ;
     ns1:stationOrder 22 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/336_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/336_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/336> ;
     ns1:stationOrder 23 .
@@ -465,8 +426,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/337> ;
     ns1:stationOrder 24 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/338_L3> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/338_L3> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/338> ;
     ns1:stationOrder 25 .
@@ -477,14 +437,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/339> ;
     ns1:stationOrder 26 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/413_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/413_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/413> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/414_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/414_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/414> ;
     ns1:stationOrder 2 .
@@ -495,8 +453,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/415> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/416_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/416_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/416> ;
     ns1:stationOrder 4 .
@@ -507,8 +464,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/417> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/418_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/418_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/418> ;
     ns1:stationOrder 6 .
@@ -525,20 +481,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/420> ;
     ns1:stationOrder 8 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/421_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/421_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/421> ;
     ns1:stationOrder 9 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/422_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/422_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/422> ;
     ns1:stationOrder 10 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/423_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/423_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/423> ;
     ns1:stationOrder 11 .
@@ -555,8 +508,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/425> ;
     ns1:stationOrder 13 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/426_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/426_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/426> ;
     ns1:stationOrder 14 .
@@ -567,8 +519,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/427> ;
     ns1:stationOrder 15 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/428_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/428_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/428> ;
     ns1:stationOrder 16 .
@@ -579,44 +530,37 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/429> ;
     ns1:stationOrder 17 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/430_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/430_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/430> ;
     ns1:stationOrder 18 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/431_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/431_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/431> ;
     ns1:stationOrder 19 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/432_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/432_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/432> ;
     ns1:stationOrder 20 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/433_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/433_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/433> ;
     ns1:stationOrder 21 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/434_L4> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/434_L4> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/434> ;
     ns1:stationOrder 22 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/509_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/509_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/509> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/510_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/510_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/510> ;
     ns1:stationOrder 2 .
@@ -663,14 +607,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/517> ;
     ns1:stationOrder 10 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/518_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/518_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/518> ;
     ns1:stationOrder 11 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/519_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/519_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/519> ;
     ns1:stationOrder 12 .
@@ -723,8 +665,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/527> ;
     ns1:stationOrder 20 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/528_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/528_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/528> ;
     ns1:stationOrder 21 .
@@ -735,8 +676,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/529> ;
     ns1:stationOrder 22 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/530_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/530_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/530> ;
     ns1:stationOrder 23 .
@@ -747,14 +687,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/531> ;
     ns1:stationOrder 24 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/532_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/532_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/532> ;
     ns1:stationOrder 25 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/533_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/533_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/533> ;
     ns1:stationOrder 26 .
@@ -765,14 +703,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/534> ;
     ns1:stationOrder 27 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/555_L5> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/555_L5> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/555> ;
     ns1:stationOrder 7 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/901_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/901_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/901> ;
     ns1:stationOrder 1 .
@@ -783,14 +719,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/903> ;
     ns1:stationOrder 2 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/904_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/904_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/904> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/905_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/905_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/905> ;
     ns1:stationOrder 4 .
@@ -801,20 +735,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/906> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/907_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/907_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/907> ;
     ns1:stationOrder 6 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/909_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/909_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/909> ;
     ns1:stationOrder 7 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/910_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/910_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/910> ;
     ns1:stationOrder 8 .
@@ -825,14 +756,12 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/911> ;
     ns1:stationOrder 9 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/912_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/912_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/912> ;
     ns1:stationOrder 10 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/913_L91> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/913_L91> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/913> ;
     ns1:stationOrder 11 .
@@ -879,20 +808,17 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/918> ;
     ns1:stationOrder 15 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/930_L104> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/930_L104> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L104> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/930> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/930_L94> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/930_L94> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L94> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/930> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/932_L104> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/932_L104> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L104> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/932> ;
     ns1:stationOrder 2 .
@@ -915,8 +841,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/933> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/934_L104> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/934_L104> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L104> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/934> ;
     ns1:stationOrder 4 .
@@ -945,8 +870,7 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/941> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/942_L94> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/942_L94> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L94> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/942> ;
     ns1:stationOrder 6 .
@@ -975,32 +899,27 @@
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/951> ;
     ns1:stationOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/952_L101> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/952_L101> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/952> ;
     ns1:stationOrder 2 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/953_L101> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/953_L101> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/953> ;
     ns1:stationOrder 3 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/954_L101> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/954_L101> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/954> ;
     ns1:stationOrder 4 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/956_L101> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/956_L101> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/956> ;
     ns1:stationOrder 5 .
 
-<https://data.example.org/transport/bcn/metro/resource/stationLine/957_L101> a ns1:StationLine ;
-    ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
+<https://data.example.org/transport/bcn/metro/resource/stationLine/957_L101> ns1:hasServiceType <https://data.example.org/transport/bcn/metro/resource/serviceType/1> ;
     ns1:onLine <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> ;
     ns1:relatesTo <https://data.example.org/transport/bcn/metro/resource/station/957> ;
     ns1:stationOrder 6 .
@@ -1034,7 +953,10 @@
     ns1:familyOrder 2 .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L99> a ns1:MetroLine ;
-    rdfs:label "FM" ;
+    rdfs:label "Funicular de Montjuïc" ;
+    owl:sameAs <https://wikidata.org/entity/Q2313145>,
+        <https://wikidata.org/entity/Q2436833>,
+        <https://wikidata.org/entity/Q388195> ;
     ns1:auxiliaryColor "004C38" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro-Funicular> ;
     ns1:destinationStation "Parc de Montjuïc (Barcelona Metro)" ;
@@ -1048,7 +970,7 @@
     ns1:lineColor "004C38" ;
     ns1:lineDescription "Paral·lel - Parc de Montjuïc" ;
     ns1:lineId 1 ;
-    ns1:lineName "FM" ;
+    ns1:lineName "Funicular de Montjuïc" ;
     ns1:lineOrder 16 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Paral·lel" ;
@@ -1056,6 +978,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/111> a ns1:Station ;
     rdfs:label "Hospital de Bellvitge" ;
+    owl:sameAs <https://wikidata.org/entity/Q2382515> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.107241921905464 41.344677306491334)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1068,6 +991,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/112> a ns1:Station ;
     rdfs:label "Bellvitge" ;
+    owl:sameAs <https://wikidata.org/entity/Q2547661> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1109169952642675 41.35097554129953)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1080,6 +1004,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/113> a ns1:Station ;
     rdfs:label "L'Hospitalet - Av. Carrilet" ;
+    owl:sameAs <https://wikidata.org/entity/Q97366890> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.102631528901838 41.35855331385863)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1092,6 +1017,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/1136> a ns1:Station ;
     rdfs:label "Trinitat Nova" ;
+    owl:sameAs <https://wikidata.org/entity/Q747555> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1831995355623732 41.44989974745443)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1104,7 +1030,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/1137> a ns1:Station ;
     rdfs:label "Casa de l'Aigua" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2547371> ;
     ns1:hasGeometry "POINT (2.1848396459573656 41.451277844017426)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2003-12-15"^^xsd:date ;
@@ -1116,6 +1042,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/1138> a ns1:Station ;
     rdfs:label "Torre Baró-Vallbona" ;
+    owl:sameAs <https://wikidata.org/entity/Q2498716> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1798835778205032 41.45919574810995)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1128,6 +1055,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/1139> a ns1:Station ;
     rdfs:label "Ciutat Meridiana" ;
+    owl:sameAs <https://wikidata.org/entity/Q339108> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.174649879224937 41.46080820561607)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1140,7 +1068,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/114> a ns1:Station ;
     rdfs:label "Rambla Just Oliveras" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q9303809> ;
     ns1:hasGeometry "POINT (2.0997493392175293 41.3640899130925)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1987-04-24"^^xsd:date ;
@@ -1152,7 +1080,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/1140> a ns1:Station ;
     rdfs:label "Can Cuiàs" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2607400> ;
     ns1:hasGeometry "POINT (2.173059363097836 41.46241309910048)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2003-12-15"^^xsd:date ;
@@ -1164,6 +1092,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/115> a ns1:Station ;
     rdfs:label "Can Serra" ;
+    owl:sameAs <https://wikidata.org/entity/Q2367549> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1027575190099883 41.367694011134795)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1176,6 +1105,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/116> a ns1:Station ;
     rdfs:label "Florida" ;
+    owl:sameAs <https://wikidata.org/entity/Q2548194> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1100273658989885 41.36831605180378)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1188,6 +1118,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/117> a ns1:Station ;
     rdfs:label "Torrassa" ;
+    owl:sameAs <https://wikidata.org/entity/Q2003013> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1165937852524435 41.36839566052364)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1200,6 +1131,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/118> a ns1:Station ;
     rdfs:label "Santa Eulàlia" ;
+    owl:sameAs <https://wikidata.org/entity/Q2035804> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1286172553621183 41.36881637467315)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1212,6 +1144,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/119> a ns1:Station ;
     rdfs:label "Mercat Nou" ;
+    owl:sameAs <https://wikidata.org/entity/Q2547776> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.133535784694404 41.373002700088556)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1224,6 +1157,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/120> a ns1:Station ;
     rdfs:label "Plaça de Sants" ;
+    owl:sameAs <https://wikidata.org/entity/Q2054359> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1381539316094176 41.37535306523874)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1236,6 +1170,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/121> a ns1:Station ;
     rdfs:label "Hostafrancs" ;
+    owl:sameAs <https://wikidata.org/entity/Q2021847> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1432912673316498 41.37525362810128)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1248,6 +1183,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/122> a ns1:Station ;
     rdfs:label "Espanya" ;
+    owl:sameAs <https://wikidata.org/entity/Q669990> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1493824969898103 41.37551004426985)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1260,6 +1196,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/123> a ns1:Station ;
     rdfs:label "Rocafort" ;
+    owl:sameAs <https://wikidata.org/entity/Q935853> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.154562483439547 41.37923215305268)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1272,6 +1209,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/124> a ns1:Station ;
     rdfs:label "Urgell" ;
+    owl:sameAs <https://wikidata.org/entity/Q2094288> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1588909108500465 41.38248740020102)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1284,6 +1222,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/125> a ns1:Station ;
     rdfs:label "Universitat" ;
+    owl:sameAs <https://wikidata.org/entity/Q678668> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1642838555557415 41.385814896985046)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1296,6 +1235,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/126> a ns1:Station ;
     rdfs:label "Plaça de Catalunya station" ;
+    owl:sameAs <https://wikidata.org/entity/Q800447> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.168994603265247 41.38748942850508)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1308,6 +1248,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/127> a ns1:Station ;
     rdfs:label "Urquinaona" ;
+    owl:sameAs <https://wikidata.org/entity/Q2109006> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.174566581524138 41.389636425102836)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1320,6 +1261,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/128> a ns1:Station ;
     rdfs:label "Arc de Triomf" ;
+    owl:sameAs <https://wikidata.org/entity/Q18654800> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.181164673248104 41.392336659636584)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1332,7 +1274,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/129> a ns1:Station ;
     rdfs:label "Marina" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2251103> ;
     ns1:hasGeometry "POINT (2.1858010331425235 41.39472528791244)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1933-04-01"^^xsd:date ;
@@ -1344,7 +1286,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/130> a ns1:Station ;
     rdfs:label "Glòries" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2547599> ;
     ns1:hasGeometry "POINT (2.187537470950601 41.4022772166665)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1951-06-23"^^xsd:date ;
@@ -1356,6 +1298,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/131> a ns1:Station ;
     rdfs:label "Clot" ;
+    owl:sameAs <https://wikidata.org/entity/Q2404313> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1870027074695884 41.41016343442273)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1368,7 +1311,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/132> a ns1:Station ;
     rdfs:label "Navas" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2547614> ;
     ns1:hasGeometry "POINT (2.1870567842653172 41.41618670887784)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1953-05-08"^^xsd:date ;
@@ -1380,7 +1323,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/133> a ns1:Station ;
     rdfs:label "La Sagrera-Meridiana station" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2140013> ;
     ns1:hasGeometry "POINT (2.1869753319473184 41.42236876778433)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1954-01-27"^^xsd:date ;
@@ -1392,6 +1335,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/134> a ns1:Station ;
     rdfs:label "Fabra i Puig" ;
+    owl:sameAs <https://wikidata.org/entity/Q1810408> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.183661431503222 41.42963259534842)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1404,6 +1348,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/135> a ns1:Station ;
     rdfs:label "Sant Andreu" ;
+    owl:sameAs <https://wikidata.org/entity/Q2536679> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1911868908810366 41.43660044290323)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1416,6 +1361,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/136> a ns1:Station ;
     rdfs:label "Torras i Bages" ;
+    owl:sameAs <https://wikidata.org/entity/Q2547669> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.190670630058029 41.44322471120022)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1428,6 +1374,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/137> a ns1:Station ;
     rdfs:label "Trinitat Vella" ;
+    owl:sameAs <https://wikidata.org/entity/Q2324406> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.19383728111338 41.448956491210204)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1440,6 +1387,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/138> a ns1:Station ;
     rdfs:label "Baró de Viver" ;
+    owl:sameAs <https://wikidata.org/entity/Q2547046> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1995630177315273 41.449935998152824)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1452,6 +1400,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/139> a ns1:Station ;
     rdfs:label "Santa Coloma" ;
+    owl:sameAs <https://wikidata.org/entity/Q506934> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2079694594622845 41.451067345464494)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1464,7 +1413,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/140> a ns1:Station ;
     rdfs:label "Fondo" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2547644> ;
     ns1:hasGeometry "POINT (2.2184351315232798 41.45158314986258)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1992-02-18"^^xsd:date ;
@@ -1476,7 +1425,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/210> a ns1:Station ;
     rdfs:label "Paral·lel" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2313145> ;
     ns1:hasGeometry "POINT (2.169116794897992 41.37500406102914)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1995-12-31"^^xsd:date ;
@@ -1488,6 +1437,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/211> a ns1:Station ;
     rdfs:label "Sant Antoni" ;
+    owl:sameAs <https://wikidata.org/entity/Q514447> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1632411382555055 41.37983283932031)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1500,6 +1450,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/212> a ns1:Station ;
     rdfs:label "Universitat" ;
+    owl:sameAs <https://wikidata.org/entity/Q678668> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.163913361869796 41.38476754205573)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1512,6 +1463,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/213> a ns1:Station ;
     rdfs:label "Passeig de Gràcia" ;
+    owl:sameAs <https://wikidata.org/entity/Q110540287> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1682429227154443 41.389416186833074)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1524,6 +1476,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/214> a ns1:Station ;
     rdfs:label "Tetuan" ;
+    owl:sameAs <https://wikidata.org/entity/Q2692167> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.175559181787991 41.394887450597096)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1536,7 +1489,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/215> a ns1:Station ;
     rdfs:label "Monumental" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q1877541> ;
     ns1:hasGeometry "POINT (2.1794616714099684 41.40052374172786)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1995-09-25"^^xsd:date ;
@@ -1548,6 +1501,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/216> a ns1:Station ;
     rdfs:label "Sagrada Família" ;
+    owl:sameAs <https://wikidata.org/entity/Q2548808> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1751061426382496 41.403985461635365)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1560,6 +1514,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/217> a ns1:Station ;
     rdfs:label "Encants" ;
+    owl:sameAs <https://wikidata.org/entity/Q2184180> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.182700370252568 41.40723597843338)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1572,6 +1527,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/218> a ns1:Station ;
     rdfs:label "Clot" ;
+    owl:sameAs <https://wikidata.org/entity/Q2404313> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.186834589944875 41.41035844850356)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1584,6 +1540,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/219> a ns1:Station ;
     rdfs:label "Bac de Roda" ;
+    owl:sameAs <https://wikidata.org/entity/Q969395> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1955032531185723 41.41516206251577)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1596,7 +1553,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/220> a ns1:Station ;
     rdfs:label "Sant Martí" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2028238> ;
     ns1:hasGeometry "POINT (2.2007239139818875 41.419063621458996)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1997-09-20"^^xsd:date ;
@@ -1608,7 +1565,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/221> a ns1:Station ;
     rdfs:label "La Pau" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q1427150> ;
     ns1:hasGeometry "POINT (2.205608148173806 41.42403302510149)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1997-09-20"^^xsd:date ;
@@ -1620,6 +1577,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/222> a ns1:Station ;
     rdfs:label "Verneda" ;
+    owl:sameAs <https://wikidata.org/entity/Q1832307> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.209883422365895 41.43000446400387)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1632,6 +1590,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/223> a ns1:Station ;
     rdfs:label "Artigues | Sant Adrià" ;
+    owl:sameAs <https://wikidata.org/entity/Q1929866> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.217771760065826 41.43384822541837)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1644,7 +1603,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/224> a ns1:Station ;
     rdfs:label "Sant Roc" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2019277> ;
     ns1:hasGeometry "POINT (2.22860617965681 41.43583082252647)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1985-04-22"^^xsd:date ;
@@ -1656,6 +1615,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/225> a ns1:Station ;
     rdfs:label "Gorg" ;
+    owl:sameAs <https://wikidata.org/entity/Q2284424> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2334409930935344 41.440237216720185)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1668,7 +1628,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/226> a ns1:Station ;
     rdfs:label "Pep Ventura" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2369006> ;
     ns1:hasGeometry "POINT (2.237959375095989 41.4439045741019)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1985-04-22"^^xsd:date ;
@@ -1680,7 +1640,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/227> a ns1:Station ;
     rdfs:label "Badalona Pompeu Fabra" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2375864> ;
     ns1:hasGeometry "POINT (2.244096816044607 41.44905421071657)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2010-07-11"^^xsd:date ;
@@ -1692,6 +1652,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/314> a ns1:Station ;
     rdfs:label "Zona Universitària" ;
+    owl:sameAs <https://wikidata.org/entity/Q2072583> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1111785337331934 41.38411534410362)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1704,6 +1665,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/315> a ns1:Station ;
     rdfs:label "Palau Reial" ;
+    owl:sameAs <https://wikidata.org/entity/Q2536272> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.118538181084618 41.385980056620134)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1716,6 +1678,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/316> a ns1:Station ;
     rdfs:label "Maria Cristina" ;
+    owl:sameAs <https://wikidata.org/entity/Q596655> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.125791232923749 41.38781569227959)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1728,6 +1691,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/317> a ns1:Station ;
     rdfs:label "Les Corts" ;
+    owl:sameAs <https://wikidata.org/entity/Q2180113> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1308710146162624 41.384119684361195)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1740,7 +1704,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/318> a ns1:Station ;
     rdfs:label "Plaça del Centre" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2127269> ;
     ns1:hasGeometry "POINT (2.1358837134051947 41.38192170670766)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1975-01-20"^^xsd:date ;
@@ -1752,6 +1716,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/319> a ns1:Station ;
     rdfs:label "Sants Estació" ;
+    owl:sameAs <https://wikidata.org/entity/Q1997098> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.140992260494352 41.38159824846632)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1764,6 +1729,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/320> a ns1:Station ;
     rdfs:label "Tarragona" ;
+    owl:sameAs <https://wikidata.org/entity/Q2548401> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1453357748823865 41.378493002424634)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1776,6 +1742,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/321> a ns1:Station ;
     rdfs:label "Espanya" ;
+    owl:sameAs <https://wikidata.org/entity/Q669990> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.151554638605345 41.37501825024238)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1788,7 +1755,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/322> a ns1:Station ;
     rdfs:label "Poble Sec" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q610740> ;
     ns1:hasGeometry "POINT (2.1602448223915327 41.374996204246344)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1975-07-15"^^xsd:date ;
@@ -1800,6 +1767,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/323> a ns1:Station ;
     rdfs:label "Paral·lel" ;
+    owl:sameAs <https://wikidata.org/entity/Q2313145> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1691181337700103 41.374892188019956)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1812,6 +1780,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/324> a ns1:Station ;
     rdfs:label "Drassanes" ;
+    owl:sameAs <https://wikidata.org/entity/Q2549147> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1756641701931962 41.37653760970823)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1824,6 +1793,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/325> a ns1:Station ;
     rdfs:label "Liceu" ;
+    owl:sameAs <https://wikidata.org/entity/Q2383315> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1730302773575945 41.3814454250764)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1836,6 +1806,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/326> a ns1:Station ;
     rdfs:label "Plaça de Catalunya station" ;
+    owl:sameAs <https://wikidata.org/entity/Q800447> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.170091830786193 41.38632215668891)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1848,6 +1819,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/327> a ns1:Station ;
     rdfs:label "Passeig de Gràcia" ;
+    owl:sameAs <https://wikidata.org/entity/Q110540287> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.16534697064377 41.39160315557566)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1860,6 +1832,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/328> a ns1:Station ;
     rdfs:label "Provença-Diagonal station" ;
+    owl:sameAs <https://wikidata.org/entity/Q2472213> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.160047462460906 41.39588794733583)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1872,6 +1845,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/329> a ns1:Station ;
     rdfs:label "Fontana" ;
+    owl:sameAs <https://wikidata.org/entity/Q535545> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1530224404295164 41.40200887904024)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1884,7 +1858,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/330> a ns1:Station ;
     rdfs:label "Lesseps" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q979398> ;
     ns1:hasGeometry "POINT (2.1504071221317904 41.405738025515355)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1924-12-31"^^xsd:date ;
@@ -1896,6 +1870,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/331> a ns1:Station ;
     rdfs:label "Vallcarca" ;
+    owl:sameAs <https://wikidata.org/entity/Q1813621> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.144337309169914 41.411974951406016)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1908,6 +1883,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/332> a ns1:Station ;
     rdfs:label "Penitents" ;
+    owl:sameAs <https://wikidata.org/entity/Q952778> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.140971786114312 41.41827911730064)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1920,6 +1896,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/333> a ns1:Station ;
     rdfs:label "Vall d'Hebron" ;
+    owl:sameAs <https://wikidata.org/entity/Q2518479> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1425645984456283 41.425282662715574)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1932,6 +1909,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/334> a ns1:Station ;
     rdfs:label "Montbau" ;
+    owl:sameAs <https://wikidata.org/entity/Q1850417> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.145039277808795 41.43062015567553)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1944,7 +1922,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/335> a ns1:Station ;
     rdfs:label "Mundet" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2226449> ;
     ns1:hasGeometry "POINT (2.1484718023518736 41.435645266968535)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2001-09-21"^^xsd:date ;
@@ -1956,6 +1934,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/336> a ns1:Station ;
     rdfs:label "Valldaura" ;
+    owl:sameAs <https://wikidata.org/entity/Q966533> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1568778304495613 41.437996077035756)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1968,6 +1947,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/337> a ns1:Station ;
     rdfs:label "Canyelles" ;
+    owl:sameAs <https://wikidata.org/entity/Q1975942> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.166387551719736 41.44175372856857)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1980,6 +1960,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/338> a ns1:Station ;
     rdfs:label "Roquetes" ;
+    owl:sameAs <https://wikidata.org/entity/Q2547358> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1760976903706806 41.44766967770127)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -1992,6 +1973,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/339> a ns1:Station ;
     rdfs:label "Trinitat Nova" ;
+    owl:sameAs <https://wikidata.org/entity/Q747555> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1840971350134772 41.44950031842506)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2004,6 +1986,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/413> a ns1:Station ;
     rdfs:label "La Pau" ;
+    owl:sameAs <https://wikidata.org/entity/Q1427150> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2051936070946385 41.423677990064625)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2016,7 +1999,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/414> a ns1:Station ;
     rdfs:label "Besòs" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q830779> ;
     ns1:hasGeometry "POINT (2.210231432719594 41.419901283124716)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1982-10-15"^^xsd:date ;
@@ -2028,6 +2011,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/415> a ns1:Station ;
     rdfs:label "Besòs Mar" ;
+    owl:sameAs <https://wikidata.org/entity/Q830777> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.216081591411872 41.415098995619424)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2040,7 +2024,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/416> a ns1:Station ;
     rdfs:label "El Maresme-Fòrum" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q948393> ;
     ns1:hasGeometry "POINT (2.2166919446941318 41.41177980668214)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2003-09-02"^^xsd:date ;
@@ -2052,6 +2036,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/417> a ns1:Station ;
     rdfs:label "Selva de Mar" ;
+    owl:sameAs <https://wikidata.org/entity/Q1265322> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.209122498871073 41.40800151156723)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2064,6 +2049,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/418> a ns1:Station ;
     rdfs:label "Poblenou" ;
+    owl:sameAs <https://wikidata.org/entity/Q1716538> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2033712341158838 41.40371611757544)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2076,6 +2062,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/419> a ns1:Station ;
     rdfs:label "Llacuna" ;
+    owl:sameAs <https://wikidata.org/entity/Q1374399> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.197711708647738 41.39942503860002)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2088,6 +2075,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/420> a ns1:Station ;
     rdfs:label "Bogatell" ;
+    owl:sameAs <https://wikidata.org/entity/Q890391> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.192012401533471 41.395107503840855)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2100,6 +2088,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/421> a ns1:Station ;
     rdfs:label "Ciutadella-Vila Olímpica" ;
+    owl:sameAs <https://wikidata.org/entity/Q1094407> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1929907067808103 41.38668673570774)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2112,7 +2101,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/422> a ns1:Station ;
     rdfs:label "Barceloneta" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q591874> ;
     ns1:hasGeometry "POINT (2.184786783641099 41.381810977055316)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1976-03-15"^^xsd:date ;
@@ -2124,7 +2113,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/423> a ns1:Station ;
     rdfs:label "Jaume I" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2041028> ;
     ns1:hasGeometry "POINT (2.178531464537553 41.384126274544364)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1924-12-30"^^xsd:date ;
@@ -2136,7 +2125,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/424> a ns1:Station ;
     rdfs:label "Urquinaona" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2109006> ;
     ns1:hasGeometry "POINT (2.1734447176875715 41.387960590591376)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1924-12-30"^^xsd:date ;
@@ -2148,6 +2137,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/425> a ns1:Station ;
     rdfs:label "Passeig de Gràcia" ;
+    owl:sameAs <https://wikidata.org/entity/Q110540287> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.167846312978762 41.390057124825155)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2160,6 +2150,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/426> a ns1:Station ;
     rdfs:label "Girona" ;
+    owl:sameAs <https://wikidata.org/entity/Q2606185> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.17082483204024 41.394920347488814)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2172,6 +2163,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/427> a ns1:Station ;
     rdfs:label "Verdaguer" ;
+    owl:sameAs <https://wikidata.org/entity/Q2514293> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1680600158861147 41.400364953509836)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2184,6 +2176,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/428> a ns1:Station ;
     rdfs:label "Joanic" ;
+    owl:sameAs <https://wikidata.org/entity/Q2719965> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.16322502517123 41.40642689565163)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2196,6 +2189,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/429> a ns1:Station ;
     rdfs:label "Alfons X" ;
+    owl:sameAs <https://wikidata.org/entity/Q784989> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.166382317620576 41.41237708360561)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2208,7 +2202,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/430> a ns1:Station ;
     rdfs:label "Guinardó – Hospital de Sant Pau" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2719931> ;
     ns1:hasGeometry "POINT (2.1739890445261802 41.415962196795135)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1974-05-16"^^xsd:date ;
@@ -2220,6 +2214,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/431> a ns1:Station ;
     rdfs:label "Maragall" ;
+    owl:sameAs <https://wikidata.org/entity/Q2720055> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1773969166751077 41.42310447161922)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2232,6 +2227,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/432> a ns1:Station ;
     rdfs:label "Llucmajor" ;
+    owl:sameAs <https://wikidata.org/entity/Q1808896> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.173343398047292 41.43698464869135)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2244,6 +2240,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/433> a ns1:Station ;
     rdfs:label "Via Júlia" ;
+    owl:sameAs <https://wikidata.org/entity/Q1113224> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.178549960776955 41.443730234715765)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2256,6 +2253,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/434> a ns1:Station ;
     rdfs:label "Trinitat Nova" ;
+    owl:sameAs <https://wikidata.org/entity/Q747555> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.182434320995176 41.44915619300977)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2268,6 +2266,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/509> a ns1:Station ;
     rdfs:label "Cornellà Centre" ;
+    owl:sameAs <https://wikidata.org/entity/Q13635409> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0704280856264488 41.35728982068586)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2280,7 +2279,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/510> a ns1:Station ;
     rdfs:label "Gavarra" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2734598> ;
     ns1:hasGeometry "POINT (2.0792687248839616 41.35799331639214)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1983-12-23"^^xsd:date ;
@@ -2292,6 +2291,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/511> a ns1:Station ;
     rdfs:label "Sant Ildefons" ;
+    owl:sameAs <https://wikidata.org/entity/Q962642> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.084392786677159 41.363381080148336)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2304,6 +2304,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/512> a ns1:Station ;
     rdfs:label "Can Boixeres" ;
+    owl:sameAs <https://wikidata.org/entity/Q2711177> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0915060884648176 41.366570750436026)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2316,6 +2317,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/513> a ns1:Station ;
     rdfs:label "Can Vidalet" ;
+    owl:sameAs <https://wikidata.org/entity/Q732179> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.099445030163751 41.37127879519907)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2328,6 +2330,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/514> a ns1:Station ;
     rdfs:label "Pubilla Cases" ;
+    owl:sameAs <https://wikidata.org/entity/Q2354124> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1072090599014683 41.373837586750604)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2340,7 +2343,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/515> a ns1:Station ;
     rdfs:label "Collblanc" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2181335> ;
     ns1:hasGeometry "POINT (2.1191953172967666 41.375743502145035)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1969-11-30"^^xsd:date ;
@@ -2352,7 +2355,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/516> a ns1:Station ;
     rdfs:label "Badal" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2348839> ;
     ns1:hasGeometry "POINT (2.127402112543491 41.37558063118747)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1969-11-30"^^xsd:date ;
@@ -2364,6 +2367,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/517> a ns1:Station ;
     rdfs:label "Plaça de Sants" ;
+    owl:sameAs <https://wikidata.org/entity/Q2054359> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.135158937983289 41.37572752856528)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2376,6 +2380,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/518> a ns1:Station ;
     rdfs:label "Sants Estació" ;
+    owl:sameAs <https://wikidata.org/entity/Q1997098> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1403981311104614 41.37995553561423)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2388,6 +2393,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/519> a ns1:Station ;
     rdfs:label "Entença" ;
+    owl:sameAs <https://wikidata.org/entity/Q2640900> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.145618590090013 41.38446685535986)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2400,6 +2406,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/520> a ns1:Station ;
     rdfs:label "Hospital Clínic" ;
+    owl:sameAs <https://wikidata.org/entity/Q2331545> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.151081070999777 41.388607764469285)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2412,6 +2419,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/521> a ns1:Station ;
     rdfs:label "Provença-Diagonal station" ;
+    owl:sameAs <https://wikidata.org/entity/Q2472213> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1588295194120284 41.394434621954986)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2424,6 +2432,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/522> a ns1:Station ;
     rdfs:label "Verdaguer" ;
+    owl:sameAs <https://wikidata.org/entity/Q2514293> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.167089429705316 41.398951748826605)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2436,6 +2445,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/523> a ns1:Station ;
     rdfs:label "Sagrada Família" ;
+    owl:sameAs <https://wikidata.org/entity/Q2548808> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1736176718394042 41.40383491161462)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2448,6 +2458,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/524> a ns1:Station ;
     rdfs:label "Sant Pau – Dos de Maig" ;
+    owl:sameAs <https://wikidata.org/entity/Q1882713> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1760160280003675 41.41075327997014)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2460,6 +2471,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/525> a ns1:Station ;
     rdfs:label "Camp de l'Arpa" ;
+    owl:sameAs <https://wikidata.org/entity/Q1866200> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.181497212109148 41.41505960638405)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2472,7 +2484,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/526> a ns1:Station ;
     rdfs:label "La Sagrera-Meridiana station" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2140013> ;
     ns1:hasGeometry "POINT (2.1865821259707423 41.421296371102905)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1959-07-21"^^xsd:date ;
@@ -2484,6 +2496,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/527> a ns1:Station ;
     rdfs:label "Congrés" ;
+    owl:sameAs <https://wikidata.org/entity/Q2106590> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.181186224264109 41.42344042865811)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2496,6 +2509,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/528> a ns1:Station ;
     rdfs:label "Maragall" ;
+    owl:sameAs <https://wikidata.org/entity/Q2720055> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.1764850046506017 41.425045349513496)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2508,6 +2522,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/529> a ns1:Station ;
     rdfs:label "Virrei Amat" ;
+    owl:sameAs <https://wikidata.org/entity/Q2710794> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> ;
     ns1:hasGeometry "POINT (2.174913058009734 41.42970333896579)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2520,6 +2535,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/530> a ns1:Station ;
     rdfs:label "Vilapicina" ;
+    owl:sameAs <https://wikidata.org/entity/Q2503261> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.167619083986825 41.430465066864016)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2532,7 +2548,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/531> a ns1:Station ;
     rdfs:label "Horta" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2643379> ;
     ns1:hasGeometry "POINT (2.159974396439855 41.429692524411095)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "1967-10-05"^^xsd:date ;
@@ -2544,7 +2560,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/532> a ns1:Station ;
     rdfs:label "El Carmel" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q1936465> ;
     ns1:hasGeometry "POINT (2.1550989391746174 41.424449773703074)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2010-07-30"^^xsd:date ;
@@ -2556,7 +2572,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/533> a ns1:Station ;
     rdfs:label "El Coll | La Teixonera" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q690814> ;
     ns1:hasGeometry "POINT (2.1483484951724954 41.4219971367312)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2010-07-30"^^xsd:date ;
@@ -2568,6 +2584,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/534> a ns1:Station ;
     rdfs:label "Vall d'Hebron" ;
+    owl:sameAs <https://wikidata.org/entity/Q2518479> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1423559823685125 41.4249931495389)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2580,6 +2597,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/555> a ns1:Station ;
     rdfs:label "Ernest Lluch" ;
+    owl:sameAs <https://wikidata.org/entity/Q2363363> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.112027311053149 41.37589760693972)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2592,6 +2610,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/901> a ns1:Station ;
     rdfs:label "Aeroport T1" ;
+    owl:sameAs <https://wikidata.org/entity/Q588940> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.07115199121738 41.28829483589318)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2604,6 +2623,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/903> a ns1:Station ;
     rdfs:label "Aeroport T2" ;
+    owl:sameAs <https://wikidata.org/entity/Q3824757> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0731133341366688 41.30382333421845)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2616,6 +2636,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/904> a ns1:Station ;
     rdfs:label "Mas Blau" ;
+    owl:sameAs <https://wikidata.org/entity/Q3824631> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0734710574676423 41.311225361691974)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2628,6 +2649,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/905> a ns1:Station ;
     rdfs:label "Parc Nou" ;
+    owl:sameAs <https://wikidata.org/entity/Q3824609> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0879294280214027 41.316628454057685)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2640,6 +2662,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/906> a ns1:Station ;
     rdfs:label "Cèntric" ;
+    owl:sameAs <https://wikidata.org/entity/Q3825963> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0934632422362887 41.322250016313035)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2652,6 +2675,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/907> a ns1:Station ;
     rdfs:label "El Prat Estació" ;
+    owl:sameAs <https://wikidata.org/entity/Q22687956> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.0899271044508416 41.33199264221667)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2664,6 +2688,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/909> a ns1:Station ;
     rdfs:label "Les Moreres" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889321> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.103073086929979 41.329118641471766)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2676,6 +2701,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/910> a ns1:Station ;
     rdfs:label "Mercabarna" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889330> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1112537335089394 41.33348460371202)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2688,6 +2714,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/911> a ns1:Station ;
     rdfs:label "Parc Logístic (Barcelona Metro)" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889339> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.127401250786491 41.341663546077285)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2700,6 +2727,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/912> a ns1:Station ;
     rdfs:label "Fira" ;
+    owl:sameAs <https://wikidata.org/entity/Q5492214> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.130451504489052 41.35198805477054)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2712,6 +2740,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/913> a ns1:Station ;
     rdfs:label "Europa | Fira station" ;
+    owl:sameAs <https://wikidata.org/entity/Q2430675> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1259237814712875 41.35756042682608)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2724,6 +2753,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/918> a ns1:Station ;
     rdfs:label "Zona Universitària" ;
+    owl:sameAs <https://wikidata.org/entity/Q2072583> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1116207999610843 41.38374174422256)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2736,6 +2766,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/934> a ns1:Station ;
     rdfs:label "Llefià" ;
+    owl:sameAs <https://wikidata.org/entity/Q2065864> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.216906383705608 41.441359580549786)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Planificat> ;
@@ -2748,6 +2779,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/935> a ns1:Station ;
     rdfs:label "La Salut" ;
+    owl:sameAs <https://wikidata.org/entity/Q2058178> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.224737073931071 41.442817097125406)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Planificat> ;
@@ -2760,6 +2792,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/936> a ns1:Station ;
     rdfs:label "Gorg" ;
+    owl:sameAs <https://wikidata.org/entity/Q2284424> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2338915631575107 41.44044324369498)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Planificat> ;
@@ -2772,6 +2805,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/940> a ns1:Station ;
     rdfs:label "Can Peixauet" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889839> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2100273277790428 41.44398590815181)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2784,6 +2818,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/941> a ns1:Station ;
     rdfs:label "Santa Rosa" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889669> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2158089802865106 41.44685031178436)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2796,7 +2831,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/942> a ns1:Station ;
     rdfs:label "Fondo" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2547644> ;
     ns1:hasGeometry "POINT (2.218485278203989 41.45187612388619)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2009-12-13"^^xsd:date ;
@@ -2808,7 +2843,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/943> a ns1:Station ;
     rdfs:label "Església Major" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q3544564> ;
     ns1:hasGeometry "POINT (2.212176867433306 41.454797043178395)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2009-12-13"^^xsd:date ;
@@ -2820,6 +2855,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/944> a ns1:Station ;
     rdfs:label "Singuerlín" ;
+    owl:sameAs <https://wikidata.org/entity/Q3544572> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2054288460907183 41.45941351575915)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2832,6 +2868,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/945> a ns1:Station ;
     rdfs:label "Can Zam" ;
+    owl:sameAs <https://wikidata.org/entity/Q3544569> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1985694162738683 41.456666111515304)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2844,6 +2881,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/951> a ns1:Station ;
     rdfs:label "ZAL – Riu Vell (Barcelona Metro)" ;
+    owl:sameAs <https://wikidata.org/entity/Q8842403> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1330954281444714 41.323705867524254)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2856,6 +2894,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/952> a ns1:Station ;
     rdfs:label "Ecoparc station" ;
+    owl:sameAs <https://wikidata.org/entity/Q8842458> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1370711814490084 41.33015871130138)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2868,6 +2907,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/953> a ns1:Station ;
     rdfs:label "Port Comercial station" ;
+    owl:sameAs <https://wikidata.org/entity/Q5406771> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1406572348295043 41.335983045353615)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2880,6 +2920,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/954> a ns1:Station ;
     rdfs:label "Zona Franca station" ;
+    owl:sameAs <https://wikidata.org/entity/Q5395656> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.144964431606467 41.34297610170164)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2892,6 +2933,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/956> a ns1:Station ;
     rdfs:label "Foc" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889365> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1418043174739214 41.35616086809139)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2904,6 +2946,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/957> a ns1:Station ;
     rdfs:label "Foneria" ;
+    owl:sameAs <https://wikidata.org/entity/Q8779791> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1382289088556874 41.3610992396304)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2916,6 +2959,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/958> a ns1:Station ;
     rdfs:label "Ildefons Cerdà" ;
+    owl:sameAs <https://wikidata.org/entity/Q2605288> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.1323149668540133 41.36313727354129)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2928,6 +2972,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/959> a ns1:Station ;
     rdfs:label "Provençana" ;
+    owl:sameAs <https://wikidata.org/entity/Q8841545> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.124099793279222 41.36135378238542)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2940,6 +2985,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/9901> a ns1:Station ;
     rdfs:label "Paral·lel" ;
+    owl:sameAs <https://wikidata.org/entity/Q2313145> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.168853176999821 41.37384752700368)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2952,6 +2998,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/9902> a ns1:Station ;
     rdfs:label "Parc de Montjuïc (Barcelona Metro)" ;
+    owl:sameAs <https://wikidata.org/entity/Q2436833> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.163268768163695 41.36895607486559)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2964,6 +3011,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/914> a ns1:Station ;
     rdfs:label "Can Tries | Gornal" ;
+    owl:sameAs <https://wikidata.org/entity/Q8779847> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.117992580878504 41.36089363267124)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2976,6 +3024,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/915> a ns1:Station ;
     rdfs:label "Torrassa" ;
+    owl:sameAs <https://wikidata.org/entity/Q2003013> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.115756109944362 41.36822261856938)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
@@ -2988,7 +3037,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/916> a ns1:Station ;
     rdfs:label "Collblanc" ;
-    ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
+    owl:sameAs <https://wikidata.org/entity/Q2181335> ;
     ns1:hasGeometry "POINT (2.11839717448588 41.37605647512773)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> ;
     ns1:inauguratedDate "2016-02-13"^^xsd:date ;
@@ -3000,6 +3049,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/930> a ns1:Station ;
     rdfs:label "La Sagrera-Meridiana station" ;
+    owl:sameAs <https://wikidata.org/entity/Q2140013> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.186723178122834 41.42049390964819)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu>,
@@ -3013,6 +3063,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/932> a ns1:Station ;
     rdfs:label "Onze de Setembre" ;
+    owl:sameAs <https://wikidata.org/entity/Q4889695> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.193564024441589 41.429558827612226)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu>,
@@ -3026,6 +3077,7 @@
 
 <https://data.example.org/transport/bcn/metro/resource/station/933> a ns1:Station ;
     rdfs:label "Bon Pastor" ;
+    owl:sameAs <https://wikidata.org/entity/Q4940996> ;
     ns1:hasAccessibility <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> ;
     ns1:hasGeometry "POINT (2.2052943593324428 41.43620276671675)"^^geo:wktLiteral ;
     ns1:hasStatus <https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu>,
@@ -3038,7 +3090,10 @@
     ns1:stationName "Bon Pastor" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L11> a ns1:MetroLine ;
-    rdfs:label "L11" ;
+    rdfs:label "Barcelona Metro line 11" ;
+    owl:sameAs <https://wikidata.org/entity/Q1419762>,
+        <https://wikidata.org/entity/Q2607400>,
+        <https://wikidata.org/entity/Q747555> ;
     ns1:auxiliaryColor "89B94C" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Can Cuiàs" ;
@@ -3058,14 +3113,17 @@
     ns1:lineColor "89B94C" ;
     ns1:lineDescription "Trinitat Nova - Can Cuiàs" ;
     ns1:lineId 7 ;
-    ns1:lineName "L11" ;
+    ns1:lineName "Barcelona Metro line 11" ;
     ns1:lineOrder 15 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Trinitat Nova" ;
     ns1:textColor "FFFFFF" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L104> a ns1:MetroLine ;
-    rdfs:label "L10N" ;
+    rdfs:label "Barcelona Metro line 10" ;
+    owl:sameAs <https://wikidata.org/entity/Q1785338>,
+        <https://wikidata.org/entity/Q2140013>,
+        <https://wikidata.org/entity/Q2284424> ;
     ns1:auxiliaryColor "00A6D6" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Gorg" ;
@@ -3087,17 +3145,19 @@
     ns1:lineColor "00A6D6" ;
     ns1:lineDescription "La Sagrera - Gorg" ;
     ns1:lineId 11 ;
-    ns1:lineName "L10N" ;
+    ns1:lineName "Barcelona Metro line 10" ;
     ns1:lineOrder 13 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "La Sagrera-Meridiana station" ;
     ns1:textColor "FFFFFF" .
 
-<https://data.example.org/transport/bcn/metro/resource/stationStatus/Planificat> a ns1:StationStatus ;
-    rdfs:label "Planificat" .
+<https://data.example.org/transport/bcn/metro/resource/stationStatus/Planificat> rdfs:label "Planificat" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L94> a ns1:MetroLine ;
-    rdfs:label "L9N" ;
+    rdfs:label "Barcelona Metro line 9" ;
+    owl:sameAs <https://wikidata.org/entity/Q1577033>,
+        <https://wikidata.org/entity/Q2140013>,
+        <https://wikidata.org/entity/Q3544569> ;
     ns1:auxiliaryColor "FB712B" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Can Zam" ;
@@ -3125,21 +3185,24 @@
     ns1:lineColor "FB712B" ;
     ns1:lineDescription "La Sagrera - Can Zam" ;
     ns1:lineId 10 ;
-    ns1:lineName "L9N" ;
+    ns1:lineName "Barcelona Metro line 9" ;
     ns1:lineOrder 10 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "La Sagrera-Meridiana station" ;
     ns1:textColor "FFFFFF" .
 
+<https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> a ns1:AccessibilityType ;
+    rdfs:label "No accessible" .
+
 <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> a ns1:TransportFamily ;
     rdfs:label "Metro" ;
     ns1:familyOrder 1 .
 
-<https://data.example.org/transport/bcn/metro/resource/accessibilityType/No%20accessible> a ns1:AccessibilityType ;
-    rdfs:label "No accessible" .
-
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L101> a ns1:MetroLine ;
-    rdfs:label "L10S" ;
+    rdfs:label "Barcelona Metro line 10" ;
+    owl:sameAs <https://wikidata.org/entity/Q1785338>,
+        <https://wikidata.org/entity/Q2181335>,
+        <https://wikidata.org/entity/Q8842403> ;
     ns1:auxiliaryColor "00A6D6" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Collblanc" ;
@@ -3171,7 +3234,7 @@
     ns1:lineColor "00A6D6" ;
     ns1:lineDescription "ZAL | Riu Vell - Collblanc" ;
     ns1:lineId 13 ;
-    ns1:lineName "L10S" ;
+    ns1:lineName "Barcelona Metro line 10" ;
     ns1:lineOrder 14 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "ZAL – Riu Vell (Barcelona Metro)" ;
@@ -3181,7 +3244,10 @@
     rdfs:label "Metro" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L91> a ns1:MetroLine ;
-    rdfs:label "L9S" ;
+    rdfs:label "Barcelona Metro line 9" ;
+    owl:sameAs <https://wikidata.org/entity/Q1577033>,
+        <https://wikidata.org/entity/Q2072583>,
+        <https://wikidata.org/entity/Q588940> ;
     ns1:auxiliaryColor "FB712B" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Zona Universitària" ;
@@ -3221,14 +3287,17 @@
     ns1:lineColor "FB712B" ;
     ns1:lineDescription "Aeroport T1 - Zona Universitària" ;
     ns1:lineId 12 ;
-    ns1:lineName "L9S" ;
+    ns1:lineName "Barcelona Metro line 9" ;
     ns1:lineOrder 11 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Aeroport T1" ;
     ns1:textColor "FFFFFF" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L2> a ns1:MetroLine ;
-    rdfs:label "L2" ;
+    rdfs:label "Barcelona Metro line 2" ;
+    owl:sameAs <https://wikidata.org/entity/Q1348921>,
+        <https://wikidata.org/entity/Q2313145>,
+        <https://wikidata.org/entity/Q2375864> ;
     ns1:auxiliaryColor "93248F" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Badalona Pompeu Fabra" ;
@@ -3274,14 +3343,17 @@
     ns1:lineColor "93248F" ;
     ns1:lineDescription "Paral·lel - Badalona Pompeu Fabra" ;
     ns1:lineId 6 ;
-    ns1:lineName "L2" ;
+    ns1:lineName "Barcelona Metro line 2" ;
     ns1:lineOrder 2 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Paral·lel" ;
     ns1:textColor "FFFFFF" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L4> a ns1:MetroLine ;
-    rdfs:label "L4" ;
+    rdfs:label "Barcelona Metro line 4" ;
+    owl:sameAs <https://wikidata.org/entity/Q1427150>,
+        <https://wikidata.org/entity/Q747555>,
+        <https://wikidata.org/entity/Q961384> ;
     ns1:auxiliaryColor "F7A30E" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Trinitat Nova" ;
@@ -3335,14 +3407,17 @@
     ns1:lineColor "F7A30E" ;
     ns1:lineDescription "La Pau - Trinitat Nova" ;
     ns1:lineId 5 ;
-    ns1:lineName "L4" ;
+    ns1:lineName "Barcelona Metro line 4" ;
     ns1:lineOrder 4 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "La Pau" ;
     ns1:textColor "000000" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L3> a ns1:MetroLine ;
-    rdfs:label "L3" ;
+    rdfs:label "Barcelona Metro line 3" ;
+    owl:sameAs <https://wikidata.org/entity/Q2072583>,
+        <https://wikidata.org/entity/Q385168>,
+        <https://wikidata.org/entity/Q747555> ;
     ns1:auxiliaryColor "1EB53A" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Trinitat Nova" ;
@@ -3404,14 +3479,17 @@
     ns1:lineColor "1EB53A" ;
     ns1:lineDescription "Zona Universitària - Trinitat Nova" ;
     ns1:lineId 2 ;
-    ns1:lineName "L3" ;
+    ns1:lineName "Barcelona Metro line 3" ;
     ns1:lineOrder 3 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Zona Universitària" ;
     ns1:textColor "FFFFFF" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L5> a ns1:MetroLine ;
-    rdfs:label "L5" ;
+    rdfs:label "Barcelona Metro line 5" ;
+    owl:sameAs <https://wikidata.org/entity/Q1348939>,
+        <https://wikidata.org/entity/Q13635409>,
+        <https://wikidata.org/entity/Q2518479> ;
     ns1:auxiliaryColor "005A97" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Vall d'Hebron" ;
@@ -3475,14 +3553,17 @@
     ns1:lineColor "005A97" ;
     ns1:lineDescription "Cornellà Centre - Vall d'Hebron" ;
     ns1:lineId 3 ;
-    ns1:lineName "L5" ;
+    ns1:lineName "Barcelona Metro line 5" ;
     ns1:lineOrder 5 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Cornellà Centre" ;
     ns1:textColor "FFFFFF" .
 
 <https://data.example.org/transport/bcn/metro/resource/metroLine/L1> a ns1:MetroLine ;
-    rdfs:label "L1" ;
+    rdfs:label "Barcelona Metro line 1" ;
+    owl:sameAs <https://wikidata.org/entity/Q1348946>,
+        <https://wikidata.org/entity/Q2382515>,
+        <https://wikidata.org/entity/Q2547644> ;
     ns1:auxiliaryColor "CE1126" ;
     ns1:belongsToFamily <https://data.example.org/transport/bcn/metro/resource/transportFamily/Metro> ;
     ns1:destinationStation "Fondo" ;
@@ -3552,7 +3633,7 @@
     ns1:lineColor "CE1126" ;
     ns1:lineDescription "Hospital de Bellvitge - Fondo" ;
     ns1:lineId 4 ;
-    ns1:lineName "L1" ;
+    ns1:lineName "Barcelona Metro line 1" ;
     ns1:lineOrder 1 ;
     ns1:operatedBy <https://data.example.org/transport/bcn/metro/resource/operator/Metro> ;
     ns1:originStation "Hospital de Bellvitge" ;
@@ -3561,8 +3642,7 @@
 <https://data.example.org/transport/bcn/metro/resource/accessibilityType/Accessible> a ns1:AccessibilityType ;
     rdfs:label "Accessible" .
 
-<https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> a ns1:StationStatus ;
-    rdfs:label "Operatiu" .
+<https://data.example.org/transport/bcn/metro/resource/stationStatus/Operatiu> rdfs:label "Operatiu" .
 
 <https://data.example.org/transport/bcn/metro/resource/serviceType/1> a ns1:ServiceType ;
     rdfs:label "Aeroport T1 - Zona Universitaria",
@@ -3575,5 +3655,41 @@
         "Paral·lel - Parc de Montjuïc",
         "Trinitat Nova - Can Cuiàs",
         "ZAL | Riu Vell - Collblanc",
-        "Zona Universitària - Trinitat Nova" .
+        "Zona Universitària - Trinitat Nova" ;
+    owl:sameAs <https://wikidata.org/entity/Q13635409>,
+        <https://wikidata.org/entity/Q1427150>,
+        <https://wikidata.org/entity/Q2072583>,
+        <https://wikidata.org/entity/Q2140013>,
+        <https://wikidata.org/entity/Q2181335>,
+        <https://wikidata.org/entity/Q2284424>,
+        <https://wikidata.org/entity/Q2313145>,
+        <https://wikidata.org/entity/Q2375864>,
+        <https://wikidata.org/entity/Q2382515>,
+        <https://wikidata.org/entity/Q2436833>,
+        <https://wikidata.org/entity/Q2518479>,
+        <https://wikidata.org/entity/Q2547644>,
+        <https://wikidata.org/entity/Q2607400>,
+        <https://wikidata.org/entity/Q3544569>,
+        <https://wikidata.org/entity/Q588940>,
+        <https://wikidata.org/entity/Q747555>,
+        <https://wikidata.org/entity/Q8842403> ;
+    ns1:serviceDestination "Badalona Pompeu Fabra",
+        "Can Cuiàs",
+        "Can Zam",
+        "Collblanc",
+        "Fondo",
+        "Gorg",
+        "Parc de Montjuïc (Barcelona Metro)",
+        "Trinitat Nova",
+        "Vall d'Hebron",
+        "Zona Universitària" ;
+    ns1:serviceOrigin "Aeroport T1",
+        "Cornellà Centre",
+        "Hospital de Bellvitge",
+        "La Pau",
+        "La Sagrera-Meridiana station",
+        "Paral·lel",
+        "Trinitat Nova",
+        "ZAL – Riu Vell (Barcelona Metro)",
+        "Zona Universitària" .
 
