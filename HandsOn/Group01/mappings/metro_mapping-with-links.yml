@@ -13,20 +13,24 @@ prefixes:
   geo: http://www.w3.org/2003/01/geo/wgs84_pos#
   geosparql: http://www.opengis.net/ont/geosparql#
   data: https://data.example.org/transport/bcn/metro/resource/
+  owl: http://www.w3.org/2002/07/owl#
   
 mappings:
   MetroLineMapping:
     sources:
-      - [csv/linies_metro-updated.csv~csv]
+      - [csv/linies-metro-updated-with-links.csv~csv]
     s: data:metroLine/L$(CODI_LINIA)
     po:
       - [a, metro:MetroLine]
       - [metro:lineId, $(ID_LINIA), xsd:integer]
       - [metro:lineCode, $(CODI_LINIA), xsd:integer]
       - [metro:lineName, $(NOM_LINIA), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_NOM_LINIA)~iri]
       - [metro:lineDescription, $(DESC_LINIA), xsd:string]
       - [metro:originStation, $(ORIGEN_LINIA), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_ORIGEN_LINIA)~iri]
       - [metro:destinationStation, $(DESTI_LINIA), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_DESTI_LINIA)~iri]
       - [metro:lineColor, $(COLOR_LINIA), xsd:string]
       - [metro:auxiliaryColor, $(COLOR_AUX_LINIA), xsd:string]
       - [metro:textColor, $(COLOR_TEXT_LINIA), xsd:string]
@@ -41,13 +45,14 @@ mappings:
 
   StationMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:station/$(CODI_ESTACIO)
     po:
       - [a, metro:Station]
       - [metro:stationId, $(ID_ESTACIO), xsd:integer]
       - [metro:stationCode, $(CODI_ESTACIO), xsd:integer]
       - [metro:stationName, $(NOM_ESTACIO), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_NOM_ESTACIO)~iri]
       - [metro:inauguratedDate, $(DATA_INAUGURACIO), xsd:date]
       - [metro:lastUpdated, $(DATA), xsd:date]
       - [metro:hasGeometry, $(GEOMETRY), geosparql:wktLiteral]
@@ -60,7 +65,7 @@ mappings:
 
   StationLineMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:stationLine/$(CODI_ESTACIO)_L$(CODI_LINIA)
     po:
       - [a, metro:StationLine]
@@ -74,7 +79,7 @@ mappings:
 
   OperatorMapping:
     sources:
-      - [csv/linies_metro-updated.csv~csv]
+      - [csv/linies-metro-updated-with-links.csv~csv]
     s: data:operator/$(NOM_OPERADOR)
     po:
       - [a, metro:Operator]
@@ -82,7 +87,7 @@ mappings:
 
   TransportFamilyMapping:
     sources:
-      - [csv/linies_metro-updated.csv~csv]
+      - [csv/linies-metro-updated-with-links.csv~csv]
     s: data:transportFamily/$(NOM_FAMILIA)
     po:
       - [a, metro:TransportFamily]
@@ -91,15 +96,19 @@ mappings:
 
   ServiceTypeMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:serviceType/$(ID_TIPUS_SERVEI)
     po:
       - [a, metro:ServiceType]
       - [rdfs:label, $(DESC_SERVEI), xsd:string]
+      - [metro:serviceOrigin, $(ORIGEN_SERVEI), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_ORIGEN_SERVEI)~iri]
+      - [metro:serviceDestination, $(DESTI_SERVEI), xsd:string]
+      - [owl:sameAs, $(same_as_wikidata_DESTI_SERVEI)~iri]
 
   AccessibilityTypeMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:accessibilityType/$(NOM_TIPUS_ACCESSIBILITAT)
     po:
       - [a, metro:AccessibilityType]
@@ -107,7 +116,7 @@ mappings:
 
   StationStatusMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:stationStatus/$(NOM_TIPUS_ESTAT)
     po:
       - [a, metro:StationStatus]
@@ -115,7 +124,7 @@ mappings:
 
   LineHasStationMapping:
     sources:
-      - [csv/estacions_linia-updated.csv~csv]
+      - [csv/estacions_linia-updated-with-links.csv~csv]
     s: data:metroLine/L$(CODI_LINIA)
     po:
       - p: metro:hasStation
