@@ -1,0 +1,57 @@
+prefixes:
+  rr: "http://www.w3.org/ns/r2rml#"
+  rml: "http://semweb.mmlab.be/ns/rml#"
+  ql: "http://semweb.mmlab.be/ns/ql#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  dct: "http://purl.org/dc/terms/"
+  trans: "http://example.org/def/transporte/trafico#"
+  schema: "http://schema.org/"
+  wikidata: "http://www.wikidata.org/entity/"
+
+mappings:
+  accident:
+    sources:
+      - [/content/accidentes-updated-with-links-pids.csv~csv]
+    s: "http://example.org/recurso/accidente/$(expID)"
+    po:
+      - [a, trans:accident]
+      - [dct:identifier, $(expID)]
+      - [dct:date, $(date), xsd:dateTime]
+      - [schema:streetAddress, $(loc1)]
+      - [schema:crossStreet, $(loc2)]
+      - [schema:streetNumber, $(numLoc)]
+      - [trans:accidentType, $(accidentType)]
+      - [schema:utmXCoord, $(utmXcoord), xsd:float]
+      - [schema:utmYCoord, $(utmYcoord), xsd:float]
+      - p: trans:hasDistrict
+        o:
+          - value: "$(districtWD)"
+            type: iri
+      - p: trans:weathercondition
+        o:
+          - value: "$(weatherWD)"
+            type: iri
+      - p: trans:vehicleType
+        o:
+          - value: "$(vehicleTypeWD)"
+            type: iri
+
+  person:
+    sources:
+      - [/content/accidentes-updated-with-links-pids.csv~csv]
+    s: "http://example.org/recurso/persona/$(expID)_person_$(person_id)"
+    po:
+      - [a, trans:involvedPerson]
+      - [trans:personRole, $(personType)]
+      - [schema:sex, $(sex)]
+      - [trans:ageRange, $(ageRange)]
+      - [trans:alcoholPositive, $(alcoholPositive), xsd:boolean]
+      - p: trans:participatesIn
+        o:
+          - mapping: accident
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(expID)]
+                - [str2, $(expID)]
