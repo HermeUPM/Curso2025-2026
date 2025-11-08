@@ -133,14 +133,13 @@ report.validate_07_02b(g, query)
 
 query =  """
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ppl:  <http://oeg.fi.upm.es/def/people#>
 
 SELECT DISTINCT ?name ?type
 WHERE {
-  ?person ppl:knows ppl:Rocky ;
-          rdf:type ?type ;
-          rdfs:label ?name .
+  ?x ppl:knows ppl:Rocky ;
+     rdf:type ?type .
+  BIND(STR(?x) AS ?name)
 }
 """
 # TO DO
