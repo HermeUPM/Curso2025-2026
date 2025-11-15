@@ -1,47 +1,36 @@
-# Assignment 4 – Self assessment
+# Hands-on assignment 4 – Self assessment
 
-### Every RDF file
-- [✔️] Uses the **.nt** or **.ttl** extension as required (Turtle serialization generated with RMLmapper).  
-- [✔️] The RDF data is serialized in **N-Triples compatible Turtle format**, validated with RDFLib and YASGUI.  
-- [✔️] Follows a consistent **resource naming strategy**:  
-  - `http://example.org/wjh/accident/{num_expediente}` for accidents  
-  - `http://example.org/wjh/district/{cod_distrito}` for districts  
-  - `http://example.org/wjh/accident/{id}/participant` for participants  
-  - `http://example.org/wjh/accident/{id}/place` for locations  
-- [✔️] All **classes and properties** use URIs consistent with the ontology (`schema.org` and `example.org/traffic#`).  
+## Checklist
 
----
+**Every RDF file:**
 
-### Every URI in the RDF files
-- [✔️] Every URI is **human-readable** and meaningful (e.g., `/accident/2025S000056` instead of random IDs).  
-- [✔️] No URI is incorrectly encoded as a string (all appear as IRIs).  
-- [✔️] No URI contains double slashes (`//`) other than the initial protocol (`http://`).  
+- [ ✔️] Uses the .nt extension
+- [✔️ ] Is serialized in the NTriples format
+- [ ✔️] Follows the resource naming strategy
+- [✔️ ] Uses class and property URIs that are the same as those used in the ontology
 
----
+**Every URI in the RDF files:**
 
-### Every individual in the RDF files
-- [✔️] Every individual has a **label or name** (`schema:name`, `schema:streetAddress`, etc.) when applicable.  
-- [✔️] Every individual has at least one **rdf:type** triple indicating its class (e.g., `schema:Event`, `schema:Place`, `schema:Person`).  
+- [ ✔️] Is "readable" and has some meaning (e.g., it is not an auto-increased integer) 
+- [✔️ ] Is not encoded as a string
+- [✔️ ] Does not contain a double slash (i.e., “//”)
 
----
+**Every individual in the RDF files:**
 
-### Every value in the RDF files
-- [✔️] All literal values are **trimmed** (no extra spaces).  
-- [✔️] All values are **properly encoded**:
-  - Dates as `xsd:date` or `xsd:dateTime` (e.g., `"2025-01-01T00:00:00Z"^^xsd:dateTime`).  
-  - Booleans as `xsd:boolean` (e.g., `"true"` / `"false"`).  
-  - Numeric coordinates as `xsd:integer` or `xsd:decimal`.  
-- [✔️] Every literal includes its **datatype**.  
-- [✔️] The correct datatypes are used (e.g., booleans for positive alcohol/drug tests, integers for UTM coordinates, strings for street names).  
+- [✔️ ] Has a label with the name of the individual
+- [✔️ ] Has a type
 
----
+**Every value in the RDF files:**
 
-## 💬 Comments on the self-assessment
+- [ ✔️] Is trimmed
+- [✔️ ] Is properly encoded (e.g., dates, booleans)
+- [✔️ ] Includes its datatype
+- [ ✔️] Uses the correct datatype (e.g., values of 0-1 may be booleans and not integers, not every string made of numbers is a number)
 
-- The transformation from CSV to RDF was performed using **RMLmapper**, based on the official templates provided in the course repository.  
-- The mapping was verified with **RDFLib in Python**, confirming that all triples were generated correctly and that datatypes are consistent.  
-- URIs were generated following a clear and hierarchical pattern to ensure readability and uniqueness.  
-- SPARQL validation queries were executed successfully (see `rdf/queries.sparql` and Python validation script).  
-- The RDF was validated with **YASGUI** and **RDF Validator**, confirming that serialization is valid and consistent with the ontology.  
-- No missing types or malformed URIs were detected.  
-- The assignment objectives — *transform data into RDF, ensure consistent URIs, correct datatypes, and validate mappings* — have been fully achieved.
+## Comments on the self-assessment
+- The CSV-to-RDF transformation is defined with clear RML mappings aligned with the ontology and the provided templates; subject construction is stable and reproducible.
+- The pipeline executes with RMLMapper and/or morph-kgc and generates a Turtle file that parses without errors while keeping prefix/URI consistency.
+- SPARQL queries validate core aspects (entity counts, key relationships, datatype correctness) and their results are consistent with the transformed dataset.
+- The repository structure matches the requirements (`mappings/*.rml`, optional `mappings/*.yml`, `rdf/*.ttl`, `rdf/queries.sparql`, and `selfAssessmentHandsOn4.md` at the root) with relative paths and concise run instructions.
+- Literals are handled correctly (dates, booleans, and language tags when needed) and no unintended duplicate resources were found.
+- As a minor improvement, consider adding one validating query per mapping rule and documenting URI patterns and any CSV preprocessing choices.
