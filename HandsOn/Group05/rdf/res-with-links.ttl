@@ -1,0 +1,44 @@
+@prefix ex: <http://example.com/ns/airquality#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/ns/airquality#station/08001001>
+    rdf:type ex:AirQualityStation ;
+    rdfs:label "Ciutadella" ;
+    ex:stationCode "08001001" ;
+    geo:lat 41.38867 ;
+    geo:long 2.19489 .
+
+<http://example.com/ns/airquality#station/08019038>
+    rdf:type ex:AirQualityStation ;
+    rdfs:label "Eixample" ;
+    ex:stationCode "08019038" ;
+    geo:lat 41.39172 ;
+    geo:long 2.16543 .
+
+<http://example.com/ns/airquality#reading/08001001/2018-06-01T09:00>
+    rdf:type ex:AirQualityReading ;
+    dct:issued "2018-06-01T09:00" ;
+    ex:overallQuality "Bona" ;
+    ex:o3_value 72 ;
+    ex:o3_quality "Moderada" ;
+    ex:no2_value 44 ;
+    ex:no2_quality "Bona" ;
+    ex:pm10_value 21 ;
+    ex:pm10_quality "Bona" ;
+    ex:madeByStation <http://example.com/ns/airquality#station/08001001> .
+
+<http://example.com/ns/airquality#reading/08019038/2018-06-01T09:00>
+    rdf:type ex:AirQualityReading ;
+    dct:issued "2018-06-01T09:00" ;
+    ex:overallQuality "Moderada" ;
+    ex:o3_value 61 ;
+    ex:o3_quality "Moderada" ;
+    ex:no2_value 55 ;
+    ex:no2_quality "Regular" ;
+    ex:pm10_value 27 ;
+    ex:pm10_quality "Regular" ;
+    ex:madeByStation <http://example.com/ns/airquality#station/08019038> .
