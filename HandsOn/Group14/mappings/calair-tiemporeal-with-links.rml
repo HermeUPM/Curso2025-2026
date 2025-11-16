@@ -21,7 +21,6 @@
         rr:class cal:Estacion
     ] ;
 
-    ### Campos básicos
     rr:predicateObjectMap [ rr:predicate cal:ESTACION ; rr:objectMap [ rml:reference "ESTACION" ] ] ;
     rr:predicateObjectMap [ rr:predicate cal:CODIGO ; rr:objectMap [ rml:reference "CODIGO" ] ] ;
     rr:predicateObjectMap [ rr:predicate cal:PROVINCIA ; rr:objectMap [ rml:reference "PROVINCIA" ] ] ;
@@ -50,7 +49,7 @@
 
 <#TM_Medicion>
     rml:logicalSource [
-        rml:source "calair-tiemporeal-updated-with-links.csv" ;
+        rml:source "D:\UPM\Semantic Web\Curso2025-2026\HandsOn\Group14\csv\calair-tiemporeal-updated-with-links.csv" ;
         rml:referenceFormulation ql:CSV
     ] ;
 
