@@ -1,0 +1,69 @@
+PREFIX schema: <https://schema.org/>
+PREFIX ex:     <https://www.roadsafetydata.com/def/>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+
+
+SELECT DISTINCT ?event ?district ?districtLink
+WHERE {
+  ?event a schema:Event ;
+         schema:areaServed ?district .
+  ?district owl:sameAs ?districtLink .
+}
+LIMIT 100
+
+----
+
+SELECT DISTINCT ?event ?vehRes ?vehLink
+WHERE {
+  ?event a schema:Event ;
+         schema:eventType ?vehRes .
+  ?vehRes owl:sameAs ?vehLink .
+}
+LIMIT 100
+
+----
+
+SELECT DISTINCT ?event ?sexRes ?sexLink
+WHERE {
+  ?event a schema:Event ;
+         ex:involvesPerson ?p .
+  ?p ex:sex ?sexRes .
+  ?sexRes owl:sameAs ?sexLink .
+}
+LIMIT 100
+
+----
+
+SELECT DISTINCT ?radar ?roadRes ?roadLink
+WHERE {
+  ?radar a ex:SpeedCamera ;
+         ex:road ?roadRes .
+  ?roadRes owl:sameAs ?roadLink .
+}
+LIMIT 200
+
+----
+
+SELECT DISTINCT ?radar ?orgRes ?orgLink
+WHERE {
+  ?radar a ex:SpeedCamera ;
+         ex:responsible ?orgRes .
+  ?orgRes owl:sameAs ?orgLink .
+}
+LIMIT 200
+
+----
+
+SELECT DISTINCT ?event ?district ?districtLink ?vehRes ?vehLink ?sexRes ?sexLink
+WHERE {
+  ?event a schema:Event ;
+         schema:areaServed ?district ;
+         schema:eventType  ?vehRes ;
+         ex:involvesPerson ?p .
+  ?district owl:sameAs ?districtLink .
+  ?vehRes  owl:sameAs ?vehLink .
+  ?p ex:sex ?sexRes .
+  ?sexRes owl:sameAs ?sexLink .
+}
+LIMIT 200

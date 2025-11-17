@@ -1,57 +1,63 @@
-############################################################
-# Query 1 – Accidentes por distrito y positivos en alcohol #
-############################################################
-PREFIX schema: http://schema.org/
-PREFIX ex: http://example.org/traffic
-PREFIX xsd: http://www.w3.org/2001/XMLSchema
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
 
-SELECT ?districtName
-       (COUNT(?e) AS ?accidents)
-       (SUM(IF(?alBool, 1, 0)) AS ?positivesAlcohol)
+# Q0 — Tipos más frecuentes
+SELECT ?type (COUNT(*) AS ?n)
+WHERE { ?s a ?type }
+GROUP BY ?type
+ORDER BY DESC(?n)
+LIMIT 20
+
+# Q1 — Accidentes: URI, label y fecha
+SELECT ?accidente ?label ?fecha
 WHERE {
-  ?e a schema:Event ;
-     schema:areaServed ?d .
-  OPTIONAL { ?d schema:name ?districtName }
-
-  OPTIONAL { ?e ex:positiveAlcohol ?alcoholRaw }
-
-  # Normalizamos a booleano:
-  BIND(
-    IF(
-      DATATYPE(?alcoholRaw) = xsd:boolean,
-      ?alcoholRaw,
-      IF(
-        isLiteral(?alcoholRaw) && LCASE(STR(?alcoholRaw)) IN ("s","si","sí","true","1"),
-        true,
-        false
-      )
-    ) 
-  AS ?alBoolTmp)
-
-  # Si no hay dato, lo tratamos como false para que SUM(IF(...)) no falle:
-  BIND( COALESCE(?alBoolTmp, false) AS ?alBool )
+  ?accidente a schema:Event ;
+             rdfs:label ?label ;
+             schema:startDate ?fecha .
 }
-GROUP BY ?districtName ?d
-ORDER BY DESC(?accidents)
-LIMIT 15
+LIMIT 20
 
-
-#######################################################
-# Query 2 – Radares con límite ≥ 90 y coordenadas     #
-#######################################################
-PREFIX ex: <http://example.org/traffic#>
-PREFIX schema: <http://schema.org/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT ?camera ?name ?road (xsd:integer(?limit) AS ?limitInt) ?lat ?long
+# Q2 — Places con dirección y número (si existe)
+SELECT ?place ?dir ?num
 WHERE {
-  ?camera a ex:SpeedCamera ;
-          schema:name ?name ;
-          ex:road ?road ;
-          ex:speedLimit ?limit ;
-          schema:latitude ?lat ;
-          schema:longitude ?long .
+  ?place a schema:Place ;
+         schema:streetAddress ?dir .
+  OPTIONAL { ?place schema:streetNumber ?num }
+}
+LIMIT 20
+
+# Q3 — Participantes: label, género, rol, vehículo, lesividad
+SELECT ?person ?label ?gender ?role ?vehicle ?injury
+WHERE {
+  ?person a schema:Person ;
+          rdfs:label ?label .
+  OPTIONAL { ?person schema:gender  ?gender }
+  OPTIONAL { ?person ex:personRole  ?role }
+  OPTIONAL { ?person ex:vehicleType ?vehicle }
+  OPTIONAL { ?person ex:injuryLevel ?injury }
+}
+LIMIT 20
+
+# Q4 — Accidentes y su distrito (con label del distrito si está)
+SELECT ?event ?eventLabel ?district ?districtLabel
+WHERE {
+  ?event a schema:Event ;
+         rdfs:label ?eventLabel ;
+         schema:areaServed ?district .
+  OPTIONAL { ?district rdfs:label ?districtLabel }
+}
+LIMIT 20
+
+# Q5 — Radares con límite >= 90 km/h
+SELECT ?cam ?limit ?lat ?long
+WHERE {
+  ?cam a ex:SpeedCamera ;
+       ex:speedLimit ?limit ;
+       schema:latitude  ?lat ;
+       schema:longitude ?long .
   FILTER(xsd:integer(?limit) >= 90)
 }
-ORDER BY DESC(?limitInt)
+ORDER BY DESC(?limit)
 LIMIT 20
