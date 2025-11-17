@@ -1,69 +1,110 @@
-PREFIX schema: <https://schema.org/>
-PREFIX ex:     <https://www.roadsafetydata.com/def/>
-PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+############################################################
+# Roadsafety 
+# L1–L7: linking (owl:sameAs)
+############################################################
+
+############################################################
+# L1 – Nº total de enlaces owl:sameAs
+############################################################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT (COUNT(*) AS ?numLinks)
+WHERE {
+  ?s owl:sameAs ?o .
+}
+
+
+############################################################
+# L2 – 
+############################################################
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?s ?o
+WHERE {
+  ?s owl:sameAs ?o .
+}
+LIMIT 20
+
+
+############################################################
+# L3 – Distritos 
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
 
-
-SELECT DISTINCT ?event ?district ?districtLink
+SELECT ?district ?label ?sameAs
 WHERE {
-  ?event a schema:Event ;
-         schema:areaServed ?district .
-  ?district owl:sameAs ?districtLink .
+  ?district rdf:type schema:AdministrativeArea ;
+            owl:sameAs ?sameAs .
+  OPTIONAL { ?district rdfs:label ?label . }
 }
-LIMIT 100
+ORDER BY ?district
 
-----
 
-SELECT DISTINCT ?event ?vehRes ?vehLink
+############################################################
+# L4 – Tipos de vehículo 
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?vehType ?label ?sameAs
 WHERE {
-  ?event a schema:Event ;
-         schema:eventType ?vehRes .
-  ?vehRes owl:sameAs ?vehLink .
+  ?vehType rdf:type schema:Vehicle ;
+           owl:sameAs ?sameAs .
+  OPTIONAL { ?vehType rdfs:label ?label . }
 }
-LIMIT 100
+ORDER BY ?vehType
 
-----
 
-SELECT DISTINCT ?event ?sexRes ?sexLink
+############################################################
+# L5 – Género / sexo 
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?genderEnum ?label ?sameAs
 WHERE {
-  ?event a schema:Event ;
-         ex:involvesPerson ?p .
-  ?p ex:sex ?sexRes .
-  ?sexRes owl:sameAs ?sexLink .
+  ?genderEnum rdf:type schema:Enumeration ;
+              owl:sameAs ?sameAs .
+  OPTIONAL { ?genderEnum rdfs:label ?label . }
 }
-LIMIT 100
+ORDER BY ?genderEnum
 
-----
 
-SELECT DISTINCT ?radar ?roadRes ?roadLink
+############################################################
+# L6 – Carreteras 
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?road ?label ?sameAs
 WHERE {
-  ?radar a ex:SpeedCamera ;
-         ex:road ?roadRes .
-  ?roadRes owl:sameAs ?roadLink .
+  ?road rdf:type schema:Road ;
+        owl:sameAs ?sameAs .
+  OPTIONAL { ?road rdfs:label ?label . }
 }
-LIMIT 200
+ORDER BY ?road
 
-----
 
-SELECT DISTINCT ?radar ?orgRes ?orgLink
+############################################################
+# L7 – Autoridades
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?auth ?name ?sameAs
 WHERE {
-  ?radar a ex:SpeedCamera ;
-         ex:responsible ?orgRes .
-  ?orgRes owl:sameAs ?orgLink .
+  ?auth rdf:type schema:Organization ;
+        owl:sameAs ?sameAs ;
+        schema:name ?name .
 }
-LIMIT 200
-
-----
-
-SELECT DISTINCT ?event ?district ?districtLink ?vehRes ?vehLink ?sexRes ?sexLink
-WHERE {
-  ?event a schema:Event ;
-         schema:areaServed ?district ;
-         schema:eventType  ?vehRes ;
-         ex:involvesPerson ?p .
-  ?district owl:sameAs ?districtLink .
-  ?vehRes  owl:sameAs ?vehLink .
-  ?p ex:sex ?sexRes .
-  ?sexRes owl:sameAs ?sexLink .
-}
-LIMIT 200
+ORDER BY ?auth
