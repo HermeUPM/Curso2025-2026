@@ -63,7 +63,6 @@
     ];
 
     rr:subjectMap [
-        # Creamos una URI única combinando la fecha y el código de estación
         rr:template "http://airecalidadbcn.linkeddata.es/g05/resource/lectura-{Data}-{Codi_Estacio}" ;
         rr:class ont:Lectura
     ];
@@ -73,7 +72,6 @@
         rr:predicate ont:date ;
         rr:objectMap [
             rml:reference "Data" 
-            # Tu ontología lo define como rdfs:Literal, así que no forzamos xsd:dateTime
         ]
     ];
 
@@ -133,12 +131,8 @@
     rr:predicateObjectMap [
         rr:predicate ont:madeInStation ;
         rr:objectMap [
-            # Apunta al mapa que crea las Estaciones
             rr:parentTriplesMap <EstacionTriplesMap> ;
             
-            # Define la "clave" de unión:
-            # La columna "Codi_Estacio" de esta fila (child)
-            # debe coincidir con la columna "Codi_Estacio" de la fila de la Estación (parent).
             rr:joinCondition [
                 rr:child "Codi_Estacio" ;
                 rr:parent "Codi_Estacio" ;
