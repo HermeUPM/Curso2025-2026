@@ -6,26 +6,20 @@
 @prefix : <http://airecalidadbcn.linkeddata.es/g05/resource/> .
 @prefix ont: <http://www.semanticweb.org/abuce/ontologies/2025/9/untitled-ontology-3/> .
 
-#################################################################
-#    Mapeo para la clase: Estacion
-#    Lee las columnas de la estación del CSV.
-#################################################################
+
 <EstacionTriplesMap>
     a rr:TriplesMap ;
 
-    # 1. FUENTE LÓGICA: Tu archivo CSV
     rml:logicalSource [
         rml:source "2018-06-Juny-qualitat-aire-BCN-updated-with-links.csv" ;
         rml:referenceFormulation ql:CSV
     ];
 
-    # 2. MAPA DE SUJETO: Crea la URI para la Estacion
     rr:subjectMap [
         rr:template "http://airecalidadbcn.linkeddata.es/g05/resource/estacion-{Codi_Estacio}" ;
         rr:class ont:Estacion
     ];
 
-    # 3. MAPA DE PREDICADO-OBJETO: Propiedades de la Estacion
 
     rr:predicateObjectMap [
         rr:predicate ont:stationCode ;
@@ -59,27 +53,21 @@
     ].
 
 
-#################################################################
-#    Mapeo para la clase: Lectura
-#    Lee las columnas de la lectura Y las enlaza a la Estacion.
-#################################################################
+
 <LecturaTriplesMap>
     a rr:TriplesMap ;
 
-    # 1. FUENTE LÓGICA: El MISMO archivo CSV
     rml:logicalSource [
         rml:source "2018-06-Juny-qualitat-aire-BCN-updated-with-links.csv" ;
         rml:referenceFormulation ql:CSV
     ];
 
-    # 2. MAPA DE SUJETO: URI para la Lectura (usamos Data y Codi_Estacio)
     rr:subjectMap [
         # Creamos una URI única combinando la fecha y el código de estación
         rr:template "http://airecalidadbcn.linkeddata.es/g05/resource/lectura-{Data}-{Codi_Estacio}" ;
         rr:class ont:Lectura
     ];
 
-    # 3. MAPA DE PREDICADO-OBJETO: Propiedades de la Lectura
 
     rr:predicateObjectMap [
         rr:predicate ont:date ;
@@ -141,7 +129,6 @@
         ]
     ];
 
-    # 4. ENLACE (Object Property): Conectando Lectura con Estacion
     
     rr:predicateObjectMap [
         rr:predicate ont:madeInStation ;
