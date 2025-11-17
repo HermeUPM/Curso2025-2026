@@ -1,63 +1,64 @@
 prefixes:
-  rr: "http://www.w3.org/ns/r2rml#"
-  rml: "http://semweb.mmlab.be/ns/rml#"
-  ql: "http://semweb.mmlab.be/ns/ql#"
-  ex: "http://example.com/ns/airquality#"
-  geo: "http://www.w3.org/2003/01/geo/wgs84_pos#"
-  dct: "http://purl.org/dc/terms/"
+  ont: "http://www.semanticweb.org/abuce/ontologies/2025/9/untitled-ontology-3/"
+  : "http://airecalidadbcn.linkeddata.es/g05/resource/"
   xsd: "http://www.w3.org/2001/XMLSchema#"
 
 sources:
-  stations:
-    access: "csv/2018-06-Juny-qualitat-aire-BCN-updated-with-links.csv"
-    referenceFormulation: ql:CSV
-  readings:
-    access: "csv/2018-06-Juny-qualitat-aire-BCN-updated-with-links.csv"
-    referenceFormulation: ql:CSV
+  # Define la fuente de datos, en este caso tu CSV
+  aire_csv:
+    access: "2018-06-Juny-qualitat-aire-BCN-updated-with-links.csv"
+    referenceFormulation: csv
 
 mappings:
-
-  Station:
-    sources: stations
-    s: "http://example.com/ns/airquality#station/$(codi_eoi)"
+  # --- Mapeo para la clase Estacion ---
+  estaciones:
+    sources:
+      - aire_csv # Usa la fuente definida arriba
+    
+    # SUJETO: Crea la URI de la Estacion
+    # $(Columna) toma el valor de la columna del CSV
+    s: :estacion-$(Codi_Estacio)
+    
+    # PREDICADO-OBJETO: Define las propiedades
     po:
-      - [rdf:type, ex:AirQualityStation]
-      - [rdfs:label, "$(nom_cabina)"]
-      - [ex:stationCode, "$(codi_eoi)"]
-      - [geo:lat, "$(latitud)", xsd:float]
-      - [geo:long, "$(longitud)", xsd:float]
+      # rdf:type ont:Estacion
+      - [ a, ont:Estacion ]
+      
+      # Propiedades de datos (Datatype properties)
+      - [ ont:stationCode, $(Codi_Estacio)~xsd:int ]
+      - [ ont:name, $(Nom_Estacio) ]
+      - [ ont:latitude, $(Latitud)~xsd:float ]
+      - [ ont:longitude, $(Longitud)~xsd:float ]
 
-  Reading:
-    sources: readings
-    s: "http://example.com/ns/airquality#reading/$(codi_eoi)/$(generat)"
+  # --- Mapeo para la clase Lectura ---
+  lecturas:
+    sources:
+      - aire_csv # Usa la misma fuente
+    
+    # SUJETO: Crea la URI de la Lectura
+    s: :lectura-$(Data)-$(Codi_Estacio)
+    
+    # PREDICADO-OBJETO: Define las propiedades
     po:
-      - [rdf:type, ex:AirQualityReading]
-      - [dct:issued, "$(generat)"]
-      - [ex:overallQuality, "$(calidad_aire)"]
-
-      - p: ex:o3_value
-        o: "$(valor_o3)"
-        datatype: xsd:integer
-
-      - [ex:o3_quality, "$(calidad_o3)"]
-
-      - p: ex:no2_value
-        o: "$(valor_no2)"
-        datatype: xsd:integer
-
-      - [ex:no2_quality, "$(calidad_no2)"]
-
-      - p: ex:pm10_value
-        o: "$(valor_pm10)"
-        datatype: xsd:integer
-
-      - [ex:pm10_quality, "$(calidad_pm10)"]
-
-      - p: ex:madeByStation
+      # rdf:type ont:Lectura
+      - [ a, ont:Lectura ]
+      
+      # Propiedades de datos (Datatype properties)
+      - [ ont:date, $(Data) ]
+      - [ ont:quality, $(Qualitat_General) ]
+      - [ ont:no2Value, $(Valor_NO2)~xsd:int ]
+      - [ ont:no2Quality, $(Qualitat_NO2) ]
+      - [ ont:o3Value, $(Valor_O3)~xsd:int ]
+      - [ ont:o3Quality, $(Qualitat_O3) ]
+      - [ ont:pm10Value, $(Valor_PM10)~xsd:int ]
+      - [ ont:pm10Quality, $(Qualitat_PM10) ]
+      
+      # Propiedad de objeto (Object property) - El enlace
+      - p: ont:madeInStation
         o:
-          mapping: Station
-          condition:
-            function: equal
-            parameters:
-              - [str1, "$(codi_eoi)"]
-              - [str2, "$(codi_eoi)"]
+          # Apunta al otro mapeo (estaciones)
+          mapping: estaciones
+          # Define la condición de enlace (Join)
+          join:
+            child: "Codi_Estacio"
+            parent: "Codi_Estacio"
