@@ -285,7 +285,7 @@ Fecha: {fecha_str}"""
 
 def main():
     st.markdown(
-    "<h1 style='text-align: center;'>Análisis de Accidentes de Tráfico Madrid 2025 (Enero-Agosto)</h1>",
+    "<h1 style='text-align: center;'>Análisis de Accidentes de Tráfico Madrid 2025</h1>",
     unsafe_allow_html=True
 )
 
@@ -370,32 +370,25 @@ def main():
         total_con_coords = len(df_geo)
         total_accidentes = len(df)
         
-        # Mostrar estadísticas
-        col1 = st.columns(1)[0]
-        with col1:
-            st.metric("Total Accidentes", total_accidentes)
-        
         if total_con_coords > 0:
             # Controles del mapa
-            col1, col2 = st.columns([3, 1])
+            col1, col2, col3 = st.columns([1, 1, 1])
             with col2:
-                max_points = st.slider(
-                    "Máx. puntos a mostrar", 
-                    min_value=100, 
-                    max_value=5000, 
-                    value=1000, 
-                    step=100,
-                    help="Limitar puntos mejora el rendimiento"
-                )
-                
-                if st.button("Regenerar Mapa"):
+                if st.button("Regenerar Mapa", use_container_width=True):
                     # Limpiar todos los mapas del cache
                     keys_to_remove = [k for k in st.session_state.keys() if k.startswith('mapa_accidentes_')]
                     for key in keys_to_remove:
                         del st.session_state[key]
             
-            with col1:
-                st.info(f"Mostrando hasta {min(max_points, total_con_coords)} accidentes en el mapa")
+            # Slider en toda la anchura
+            max_points = st.slider(
+                "Máx. puntos a mostrar", 
+                min_value=100, 
+                max_value=total_con_coords, 
+                value=min(1000, total_con_coords), 
+                step=100,
+                help="Limitar puntos mejora el rendimiento"
+            )
             
             # Crear y mostrar mapa
             with st.spinner("Cargando mapa..."):
@@ -407,7 +400,7 @@ def main():
             else:
                 st.error("No se pudo crear el mapa")
         else:
-            st.warning("⚠️ No hay datos de coordenadas disponibles para mostrar en el mapa")
+            st.warning("No hay datos de coordenadas disponibles para mostrar en el mapa")
 
 if __name__ == "__main__":
     main()
