@@ -1,0 +1,7 @@
+rdflib
+streamlit
+plotly
+pandas
+geopy
+folium
+streamlit-folium
