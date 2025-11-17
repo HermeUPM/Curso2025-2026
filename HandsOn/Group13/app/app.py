@@ -28,26 +28,133 @@ def cargar_y_extraer_datos(path):
     datos = []
     qids = set()
 
-    for accidente in g.subjects(predicate=None, object=ns1.Accident):
-        fecha_literal = g.value(accidente, ns1.hasDatetime)
-        distrito_uri = g.value(accidente, ns1.hasDistrictName)
-        lat_literal = g.value(accidente, ns1.hasLat)
-        lng_literal = g.value(accidente, ns1.hasLong)
 
-        # Convertir fecha
+    # ==========================================================
+    # EXTRAER DATOS CON SPARQL
+    # ==========================================================
+
+    query = """
+    PREFIX ns1: <http://example.org/def/base#>
+
+    SELECT ?accidente ?fecha ?distrito ?lat ?lng
+    WHERE {
+        ?accidente a ns1:Accident ;
+                   ns1:hasDatetime ?fecha ;
+                   ns1:hasDistrictName ?distrito ;
+                   ns1:hasLat ?lat ;
+                   ns1:hasLong ?lng .
+    }
+    """
+
+    resultados = g.query(query)
+
+    datos = []
+    qids = set()
+
+    # ==========================================================
+    # EXTRAER DATOS CON SPARQL
+    # ==========================================================
+
+    query = """
+    PREFIX ns1: <http://example.org/def/base#>
+
+    SELECT ?accidente ?fecha ?distrito ?lat ?lng
+    WHERE {
+        ?accidente a ns1:Accident ;
+                   ns1:hasDatetime ?fecha ;
+                   ns1:hasDistrictName ?distrito ;
+                   ns1:hasLat ?lat ;
+                   ns1:hasLong ?lng .
+    }
+    """
+
+    resultados = g.query(query)
+
+    datos = []
+    qids = set()
+
+    # ==========================================================
+    # EXTRAER DATOS CON SPARQL
+    # ==========================================================
+
+    query = """
+    PREFIX ns1: <http://example.org/def/base#>
+
+    SELECT ?accidente ?fecha ?distrito ?lat ?lng
+    WHERE {
+        ?accidente a ns1:Accident ;
+                   ns1:hasDatetime ?fecha ;
+                   ns1:hasDistrictName ?distrito ;
+                   ns1:hasLat ?lat ;
+                   ns1:hasLong ?lng .
+    }
+    """
+
+    resultados = g.query(query)
+
+    datos = []
+    qids = set()
+
+    # ==========================================================
+    # EXTRAER DATOS CON SPARQL
+    # ==========================================================
+
+    query = """
+    PREFIX ns1: <http://example.org/def/base#>
+
+    SELECT ?accidente ?fecha ?distrito ?lat ?lng
+    WHERE {
+        ?accidente a ns1:Accident ;
+                   ns1:hasDatetime ?fecha ;
+                   ns1:hasDistrictName ?distrito ;
+                   ns1:hasLat ?lat ;
+                   ns1:hasLong ?lng .
+    }
+    """
+
+    resultados = g.query(query)
+
+    datos = []
+    qids = set()
+
+# ==========================================================
+    # EXTRAER DATOS CON SPARQL
+    # ==========================================================
+
+    query = """
+    PREFIX ns1: <http://example.org/def/base#>
+
+    SELECT ?accidente ?fecha ?distrito ?lat ?lng
+    WHERE {
+        ?accidente a ns1:Accident ;
+                   ns1:hasDatetime ?fecha ;
+                   ns1:hasDistrictName ?distrito ;
+                   ns1:hasLat ?lat ;
+                   ns1:hasLong ?lng .
+    }
+    """
+
+    resultados = g.query(query)
+
+    datos = []
+    qids = set()
+
+    for accidente, fecha_literal, distrito_uri, lat_literal, lng_literal in resultados:
+
+        # Fecha ISO
         try:
             fecha = datetime.fromisoformat(str(fecha_literal).replace("Z", "+00:00"))
         except Exception:
             fecha = None
 
-        # Extraer coordenadas
+        # Coordenadas
         try:
             lat = float(str(lat_literal)) if lat_literal else None
             lng = float(str(lng_literal)) if lng_literal else None
         except Exception:
             lat, lng = None, None
 
-        # Extraer nombre del distrito de la URI
+        # Nombre distrito desde URI
         if distrito_uri:
             distrito_str = str(distrito_uri)
             if "/distrito/" in distrito_str:
@@ -70,6 +177,7 @@ def cargar_y_extraer_datos(path):
             "lat": lat,
             "lng": lng
         })
+
 
     df = pd.DataFrame(datos)
 
