@@ -2,88 +2,271 @@
 @prefix ce-res: <http://example.org/group11/resource/cultural-events/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 
-#####################################
-# INSTANCIAS DE CLASES DE APOYO
-#####################################
+<http://example.org/group11/ontology/cultural-events>
+    a owl:Ontology ;
+    rdfs:label "Ontology for Madrid cultural agenda events"@en ;
+    rdfs:comment "Lightweight ontology for representing cultural events from the Madrid open data agenda, their venues and related information."@en ;
+    .
 
-# Distrito USERA
-ce-res:district/usera
-    a :District ;
-    :districtName "USERA"@es ;
-    rdfs:label "Distrito de Usera"@es .
+############################
+# CLASSES
+############################
 
-# Barrio ORCASITAS
-ce-res:neighborhood/orcasitas
-    a :Neighborhood ;
-    :neighborhoodName "ORCASITAS"@es ;
-    rdfs:label "Barrio de Orcasitas"@es .
+:Event a owl:Class ;
+    rdfs:label "Cultural event"@en ;
+    rdfs:comment "An event from the Madrid cultural agenda (a single show, concert, exhibition day, etc.)."@en .
 
-# Categoría de audiencia: Niños
-ce-res:audience/ninos
-    a :AudienceCategory ;
-    :audienceLabel "/usuario/Niños" ;
-    rdfs:label "Niños"@es .
+:Activity a owl:Class ;
+    rdfs:label "Activity"@en ;
+    rdfs:comment "A recurring or grouped activity under which one or more events are organized."@en .
 
-# Tipo de evento: Teatro / Performance
-ce-res:eventType/teatro-performance
-    a :EventType ;
-    :eventTypeLabel "/contenido/actividades/TeatroPerformance" ;
-    rdfs:label "Teatro y performance"@es .
+:Venue a owl:Class ;
+    rdfs:label "Venue"@en ;
+    rdfs:comment "A physical facility or place where cultural events take place."@en .
 
-#####################################
-# INSTALACIÓN (VENUE)
-#####################################
+:District a owl:Class ;
+    rdfs:label "District"@en ;
+    rdfs:comment "Administrative district of Madrid where a venue is located."@en .
 
-ce-res:venue/centro-cultural-meseta-orcasitas-usera
-    a :Venue ;
-    :venueName "Centro Cultural Meseta de Orcasitas (Usera)"@es ;
-    :venuePage <http://www.madrid.es/sites/v/index.jsp?vgnextoid=fbd91e79ee71c010VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD> ;
-    :accessibilityInfo "1" ;
-    :streetType "PLAZA" ;
-    :streetName "ASOCIACION" ;
-    :streetNumber "1" ;
-    :postalCode "28041" ;
-    :coordX "439882"^^xsd:decimal ;
-    :coordY "4469031"^^xsd:decimal ;
-    wgs84:lat "40.36969488211539"^^xsd:decimal ;
-    wgs84:long "-3.7081179166391824"^^xsd:decimal ;
-    :isInDistrict ce-res:district/usera ;
-    :isInNeighborhood ce-res:neighborhood/orcasitas ;
-    rdfs:label "Centro Cultural Meseta de Orcasitas (Usera)"@es .
+:Neighborhood a owl:Class ;
+    rdfs:label "Neighborhood"@en ;
+    rdfs:comment "Neighborhood within a district of Madrid where a venue is located."@en .
 
-#####################################
-# ACTIVIDAD
-#####################################
+:AudienceCategory a owl:Class ;
+    rdfs:label "Audience category"@en ;
+    rdfs:comment "Category of target audience of an event (e.g. children, families, youth)."@en .
 
-ce-res:activity/actividades-centro-cultural-meseta-orcasitas
-    a :Activity ;
-    :activityTitle "Actividades en el Centro Cultural Meseta de Orcasitas"@es ;
-    :activityPage <http://www.madrid.es/sites/v/index.jsp?vgnextoid=82fe2d24e6f61910VgnVCM2000001f4a900aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD> ;
-    rdfs:label "Actividades en el Centro Cultural Meseta de Orcasitas"@es .
+:EventType a owl:Class ;
+    rdfs:label "Event type"@en ;
+    rdfs:comment "Type or category of event (the values from the TIPO column)."@en .
 
-#####################################
-# EVENTO
-#####################################
+############################
+# OBJECT PROPERTIES
+############################
 
-ce-res:event/50065251
-    a :Event ;
-    :eventId 50065251 ;
-    :title "4 patas tiene un cuento"@es ;
-    :price "" ;                         # PRECIO vacío en el CSV
-    :isFree true ;                      # GRATUITO = 1
-    :isLongDuration false ;             # LARGA-DURACION = 0
-    :daysOfWeek "" ;                    # DIAS-SEMANA vacío
-    :excludedDays "" ;                  # DIAS-EXCLUIDOS vacío
-    :startDate "2025-10-05T00:00:00"^^xsd:dateTime ;
-    :endDate "2025-10-05T23:59:00"^^xsd:dateTime ;
-    :startTime "12:00:00"^^xsd:time ;
-    :description "Compañía: El perro Verde. Categoría: infantil. (Texto completo de la descripción del CSV)."@es ;
-    :eventPage <http://www.madrid.es/sites/v/index.jsp?vgnextoid=64e4c9cfcf579910VgnVCM200000f921e388RCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD> ;
-    :hasActivity ce-res:activity/actividades-centro-cultural-meseta-orcasitas ;
-    :hasVenue ce-res:venue/centro-cultural-meseta-orcasitas-usera ;
-    :hasAudience ce-res:audience/ninos ;
-    :hasEventType ce-res:eventType/teatro-performance ;
-    rdfs:label "4 patas tiene un cuento"@es .
+:hasVenue a owl:ObjectProperty ;
+    rdfs:label "has venue"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :Venue ;
+    rdfs:comment "Relates an event to the venue where it takes place."@en .
+
+:hasActivity a owl:ObjectProperty ;
+    rdfs:label "has activity"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :Activity ;
+    rdfs:comment "Relates an event to the activity it belongs to (TITULO-ACTIVIDAD / URL-ACTIVIDAD)."@en .
+
+:hasAudience a owl:ObjectProperty ;
+    rdfs:label "has audience"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :AudienceCategory ;
+    rdfs:comment "Relates an event to one or more audience categories derived from the AUDIENCIA field."@en .
+
+:hasEventType a owl:ObjectProperty ;
+    rdfs:label "has event type"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :EventType ;
+    rdfs:comment "Relates an event to its type/category (TIPO column)."@en .
+
+:isInDistrict a owl:ObjectProperty ;
+    rdfs:label "is in district"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range :District ;
+    rdfs:comment "Relates a venue to the district where it is located."@en .
+
+:isInNeighborhood a owl:ObjectProperty ;
+    rdfs:label "is in neighborhood"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range :Neighborhood ;
+    rdfs:comment "Relates a venue to the neighborhood where it is located."@en .
+
+############################
+# DATATYPE PROPERTIES (EVENT)
+############################
+
+:eventId a owl:DatatypeProperty ;
+    rdfs:label "event identifier"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Identifier of the event (ID-EVENTO)."@en .
+
+:title a owl:DatatypeProperty ;
+    rdfs:label "title"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Title of the event (TITULO)."@en .
+
+:price a owl:DatatypeProperty ;
+    rdfs:label "price"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Price description of the event (PRECIO)."@en .
+
+:isFree a owl:DatatypeProperty ;
+    rdfs:label "is free"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates if the event is free (GRATUITO)."@en .
+
+:isLongDuration a owl:DatatypeProperty ;
+    rdfs:label "is long duration"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates if the event is considered long duration (LARGA-DURACION)."@en .
+
+:daysOfWeek a owl:DatatypeProperty ;
+    rdfs:label "days of week"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Days of the week when the event takes place (DIAS-SEMANA)."@en .
+
+:excludedDays a owl:DatatypeProperty ;
+    rdfs:label "excluded days"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Excluded days for long-duration events (DIAS-EXCLUIDOS)."@en .
+
+:startDate a owl:DatatypeProperty ;
+    rdfs:label "start date"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "Start date of the event (FECHA)."@en .
+
+:endDate a owl:DatatypeProperty ;
+    rdfs:label "end date"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "End date of the event (FECHA-FIN)."@en .
+
+:startTime a owl:DatatypeProperty ;
+    rdfs:label "start time"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:time ;
+    rdfs:comment "Start time of the event (HORA)."@en .
+
+:description a owl:DatatypeProperty ;
+    rdfs:label "description"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Textual description of the event (DESCRIPCION)."@en .
+
+:eventPage a owl:DatatypeProperty ;
+    rdfs:label "event page URL"@en ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "URL of the event information page (CONTENT-URL)."@en .
+
+:activityTitle a owl:DatatypeProperty ;
+    rdfs:label "activity title"@en ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Title of the activity (TITULO-ACTIVIDAD)."@en .
+
+:activityPage a owl:DatatypeProperty ;
+    rdfs:label "activity page URL"@en ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "URL of the activity information page (URL-ACTIVIDAD)."@en .
+
+############################
+# DATATYPE PROPERTIES (VENUE)
+############################
+
+:venueName a owl:DatatypeProperty ;
+    rdfs:label "venue name"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name of the venue (NOMBRE-INSTALACION)."@en .
+
+:venuePage a owl:DatatypeProperty ;
+    rdfs:label "venue page URL"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "URL of the venue information page (URL-INSTALACION)."@en .
+
+:accessibilityInfo a owl:DatatypeProperty ;
+    rdfs:label "accessibility information"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Accessibility information of the venue (ACCESIBILIDAD-INSTALACION)."@en .
+
+:streetType a owl:DatatypeProperty ;
+    rdfs:label "street type"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Type of street (CLASE-VIAL-INSTALACION)."@en .
+
+:streetName a owl:DatatypeProperty ;
+    rdfs:label "street name"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Street name (NOMBRE-VIA-INSTALACION)."@en .
+
+:streetNumber a owl:DatatypeProperty ;
+    rdfs:label "street number"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Street number of the venue (NUM-INSTALACION)."@en .
+
+:postalCode a owl:DatatypeProperty ;
+    rdfs:label "postal code"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Postal code of the venue (CODIGO-POSTAL-INSTALACION)."@en .
+
+:coordX a owl:DatatypeProperty ;
+    rdfs:label "X coordinate"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "X coordinate of the venue (COORDENADA-X)."@en .
+
+:coordY a owl:DatatypeProperty ;
+    rdfs:label "Y coordinate"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Y coordinate of the venue (COORDENADA-Y)."@en .
+
+# Using existing WGS84 properties for lat/long
+wgs84:lat a owl:DatatypeProperty ;
+    rdfs:label "latitude"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Latitude of the venue (LATITUD)."@en .
+
+wgs84:long a owl:DatatypeProperty ;
+    rdfs:label "longitude"@en ;
+    rdfs:domain :Venue ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Longitude of the venue (LONGITUD)."@en .
+
+############################
+# DATATYPE PROPERTIES (DISTRICT / NEIGHBORHOOD / AUDIENCE / TYPE)
+############################
+
+:districtName a owl:DatatypeProperty ;
+    rdfs:label "district name"@en ;
+    rdfs:domain :District ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name of the district (DISTRITO-INSTALACION)."@en .
+
+:neighborhoodName a owl:DatatypeProperty ;
+    rdfs:label "neighborhood name"@en ;
+    rdfs:domain :Neighborhood ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name of the neighborhood (BARRIO-INSTALACION)."@en .
+
+:audienceLabel a owl:DatatypeProperty ;
+    rdfs:label "audience label"@en ;
+    rdfs:domain :AudienceCategory ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Label or code of an audience category (values from AUDIENCIA column)."@en .
+
+:eventTypeLabel a owl:DatatypeProperty ;
+    rdfs:label "event type label"@en ;
+    rdfs:domain :EventType ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Label of the event type (values from TIPO column)."@en .
