@@ -1,63 +1,118 @@
+############################################################
+# Roadsafety – Consultas SPARQL de validacion
+# Dataset: roadsafety.ttl
+############################################################
+
+############################################################
+# Q1 – Numero de instancias por clase
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <https://schema.org/>
-PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
 
-# Q0 — Tipos más frecuentes
-SELECT ?type (COUNT(*) AS ?n)
-WHERE { ?s a ?type }
-GROUP BY ?type
+SELECT ?class (COUNT(*) AS ?n)
+WHERE {
+  ?s rdf:type ?class .
+}
+GROUP BY ?class
 ORDER BY DESC(?n)
-LIMIT 20
 
-# Q1 — Accidentes: URI, label y fecha
-SELECT ?accidente ?label ?fecha
+
+############################################################
+# Q2 – Accidentes y numero de personas implicadas
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
+PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
+
+SELECT ?accident (COUNT(DISTINCT ?person) AS ?numPersons)
 WHERE {
-  ?accidente a schema:Event ;
-             rdfs:label ?label ;
-             schema:startDate ?fecha .
+  ?accident rdf:type schema:Event ;
+            ex:involvesPerson ?person .
+}
+GROUP BY ?accident
+ORDER BY DESC(?numPersons)
+
+
+############################################################
+# Q3 – Detalle de personas implicadas en accidentes
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
+PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
+
+SELECT ?accident ?person ?ageRange ?injuryLevel ?vehicleType ?posAlcohol ?posDrug
+WHERE {
+  ?accident rdf:type schema:Event ;
+            ex:involvesPerson ?person .
+
+  OPTIONAL { ?person ex:ageRange        ?ageRange . }
+  OPTIONAL { ?person ex:injuryLevel     ?injuryLevel . }
+  OPTIONAL { ?person ex:usesVehicleType ?vehicleType . }
+  OPTIONAL { ?person ex:positiveAlcohol ?posAlcohol . }
+  OPTIONAL { ?person ex:positiveDrug    ?posDrug . }
 }
 LIMIT 20
 
-# Q2 — Places con dirección y número (si existe)
-SELECT ?place ?dir ?num
+
+############################################################
+# Q4 – Radares: carretera, PK, velocidad, coords
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
+PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
+
+SELECT ?radar ?road ?pk ?speed ?utmX ?utmY ?lon ?lat
 WHERE {
-  ?place a schema:Place ;
-         schema:streetAddress ?dir .
-  OPTIONAL { ?place schema:streetNumber ?num }
+  ?radar rdf:type ex:SpeedCamera ;
+         ex:road ?road ;
+         ex:pk ?pk ;
+         ex:speedLimit ?speed .
+
+  OPTIONAL { ?radar ex:utmX ?utmX . }
+  OPTIONAL { ?radar ex:utmY ?utmY . }
+  OPTIONAL { ?radar schema:longitude ?lon . }
+  OPTIONAL { ?radar schema:latitude  ?lat . }
 }
 LIMIT 20
 
-# Q3 — Participantes: label, género, rol, vehículo, lesividad
-SELECT ?person ?label ?gender ?role ?vehicle ?injury
+
+############################################################
+# Q5 – Observaciones de poblacion distrito/barrio
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ex:     <https://www.roadsafetydata.com/ontology#>
+
+SELECT ?obs ?district ?neighbourhood ?labelDistrict ?labelNeighbourhood
+       ?people ?male ?female
 WHERE {
-  ?person a schema:Person ;
-          rdfs:label ?label .
-  OPTIONAL { ?person schema:gender  ?gender }
-  OPTIONAL { ?person ex:personRole  ?role }
-  OPTIONAL { ?person ex:vehicleType ?vehicle }
-  OPTIONAL { ?person ex:injuryLevel ?injury }
+  ?obs rdf:type ex:PopulationObservation ;
+       ex:forDistrict      ?district ;
+       ex:forNeighbourhood ?neighbourhood ;
+       ex:peopleTotal      ?people .
+
+  OPTIONAL { ?district      rdfs:label ?labelDistrict . }
+  OPTIONAL { ?neighbourhood rdfs:label ?labelNeighbourhood . }
+  OPTIONAL { ?obs ex:peopleMale   ?male . }
+  OPTIONAL { ?obs ex:peopleFemale ?female . }
 }
 LIMIT 20
 
-# Q4 — Accidentes y su distrito (con label del distrito si está)
-SELECT ?event ?eventLabel ?district ?districtLabel
-WHERE {
-  ?event a schema:Event ;
-         rdfs:label ?eventLabel ;
-         schema:areaServed ?district .
-  OPTIONAL { ?district rdfs:label ?districtLabel }
-}
-LIMIT 20
 
-# Q5 — Radares con límite >= 90 km/h
-SELECT ?cam ?limit ?lat ?long
+############################################################
+# Q6 – Nº accidentes por distrito (areaServed)
+############################################################
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?district ?label (COUNT(DISTINCT ?accident) AS ?numAccidents)
 WHERE {
-  ?cam a ex:SpeedCamera ;
-       ex:speedLimit ?limit ;
-       schema:latitude  ?lat ;
-       schema:longitude ?long .
-  FILTER(xsd:integer(?limit) >= 90)
+  ?accident rdf:type schema:Event ;
+            schema:areaServed ?district .
+
+  OPTIONAL { ?district rdfs:label ?label . }
 }
-ORDER BY DESC(?limit)
-LIMIT 20
+GROUP BY ?district ?label
+ORDER BY DESC(?numAccidents)
