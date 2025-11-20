@@ -22,7 +22,7 @@
 map:map_triplesmap_bicycle_Parking_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "triplesmap_bicycle_Parking" ;
-	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010 ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008 ;
 	rr:subjectMap map:s_000 .
 
 map:om_000 rdf:type rr:ObjectMap ;
@@ -63,14 +63,6 @@ map:om_008 rml:reference "SAME_AS_WIKIDATA_DISTRITO" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
-map:om_009 rml:reference "SAME_AS_WIKIDATA_DISTRITO" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
-map:om_010 rml:reference "SAME_AS_WIKIDATA_BARRIO" ;
-	rdf:type rr:ObjectMap ;
-	rr:termType rr:IRI .
-
 map:pm_000 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
@@ -93,16 +85,10 @@ map:pm_006 rdf:type rr:PredicateMap ;
 	rr:constant mm:facilityDistrict .
 
 map:pm_007 rdf:type rr:PredicateMap ;
-	rr:constant mm:facilityNeighborhood .
+	rr:constant owl:sameAsNeighborhood .
 
 map:pm_008 rdf:type rr:PredicateMap ;
-	rr:constant mm:facilityDistrict .
-
-map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
-
-map:pm_010 rdf:type rr:PredicateMap ;
-	rr:constant owl:sameAs .
+	rr:constant owl:sameAsDistrict .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
@@ -140,14 +126,6 @@ map:pom_008 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_008 ;
 	rr:predicateMap map:pm_008 .
 
-map:pom_009 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_009 ;
-	rr:predicateMap map:pm_009 .
-
-map:pom_010 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_010 ;
-	rr:predicateMap map:pm_010 .
-
 map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_triplesmap_bicycle_Parking_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 
@@ -155,5 +133,5 @@ map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "http://movemadrid.org/resource/bicycle_parking/{ID}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
-	rml:source "/data/BikeParking-updated_withLinks.csv" ;
+	rml:source "BikeParking-updated_withLinks.csv";
 	rdf:type rml:LogicalSource .
