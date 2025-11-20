@@ -72,15 +72,21 @@ ns = Namespace("http://oeg.fi.upm.es/def/people#")
 
 # variable to return
 individuals = []
-classes = {ns.Person} # variable para guardar las clases, empezando por person
-for subPerson in g.subjects(RDFS.subClassOf, ns.Person):
-    classes.add(subPerson) # se agregan subclases de person
-    for sub2Person in g.subjects(RDFS.subClassOf, subPerson):
-        classes.add(sub2Person) # se agregan subclases de las subclases de person
+classes = set([ns.Person]) # variable para guardar las clases, empezando por person
+leftVisit = [ns.Person] 
+while leftVisit:
+  next = leftVisit.pop()
+  for subPerson in g.subjects(RDFS.subClassOf, next):
+    if subPerson not in classes: # se recorren todas las subclases de person y todas las subclases de las subclases
+            classes.add(subPerson)
+            leftVisit.append(subPerson)
 
+seenIndiv = set() # set para los individuos ya recorridos para no repetir
 for cla in classes: # Ya con todas las clases se muestran los individuos de cada una
     for indiv in g.subjects(RDF.type, cla):
-        individuals.append(indiv)
+      if indiv not in seenIndiv:
+            individuals.append(indiv)
+            seenIndiv.add(indiv)
 # visualize results
 for i in individuals:
   print(i)
