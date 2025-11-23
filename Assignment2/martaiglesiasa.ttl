@@ -2,6 +2,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Tipos de los recursos
+# (Opcional) Tipos de los recursos
 ex:ClassRoom03        a ex:ClassRoom .
 ex:Sensor347          a ex:Sensor .
 ex:Measurement8432    a ex:Measurement .
